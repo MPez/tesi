@@ -1,0 +1,13 @@
+#File da escludere dal versionamento
+
+*.pdf
+*.png
+
+*.aux
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.toc
+*.synctex.gz
