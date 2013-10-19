@@ -187,6 +187,8 @@
 %\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
 %\definecolor{Black}{cmyk}{0, 0, 0, 0}
 
+\definecolor{redUni}{RGB}{155,0,20}
+
 % ********************************************************************
 % Font Stuff
 % ********************************************************************   
@@ -539,6 +541,8 @@
     \ifthenelse{\boolean{@listings}}%        
     {%
 	    \newlistof{listings}{lol}{\lstlistlistingname}%
+	    	\renewcommand{\lstlistingname}{Listato}%
+	    	\renewcommand{\lstlistlistingname}{Elenco dei Listati}%
 			\renewcommand{\cftlistingspresnum}{\scshape\MakeTextLowercase}%
 			\renewcommand{\cftlistingsfont}{\normalfont}%
 			\renewcommand{\cftlistingspresnum}{\lstlistingname~}%

@@ -12,24 +12,43 @@
         \vfill
 
         \begingroup
-            \color{Maroon}\spacedallcaps{\myTitle} \\ \bigskip
+        	\textcolor{redUni}{\textls[160]{\scshape{\huge \myUni}}}\\ \bigskip
+        	
+        	\textls[80]{\scshape{\LARGE \myDepartment}}\\ \medskip
+        	
+			\textls[80]{\scshape{\Large \myDegree}}\\
+            
         \endgroup
-
-        \spacedlowsmallcaps{\myName}
 
         \vfill
 
-        %\includegraphics[width=6cm]{gfx/TFZsuperellipse_bw} \\ \medskip
+        \includegraphics[width=7cm]{gfx/unipd_sigillo} \\ \medskip
+		
+		\vfill		
+		
+		\textcolor{redUni}{\textls[80]{\scshape{\LARGE \myTitle}}} \\ \medskip
+        \mySubtitle \\
+        
+        \vfill
+        
+        
+		\begin{minipage}{0.5\textwidth}
+			\begin{flushleft}
+			\emph{Laureando:}\\
+			\textsc{\large \myName}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{flushright}
+			\emph{Relatore:}\\
+			\textsc{\large \myProf}
+			\end{flushright}
+		\end{minipage}        
+        
+		\vfill
 
-        \mySubtitle \\ \medskip   
-        %\myDegree \\
-        %\myDepartment \\                            
-        %\myFaculty \\
-        %\myUni \\ \bigskip
-
-        \myTime\ -- \myVersion
-
-        \vfill                      
+        \myTime
+                    
 
     \end{center}  
   \end{addmargin}       
