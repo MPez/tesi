@@ -31,7 +31,7 @@ Il sistema operativo di riferimento all'interno dell'azienda era \emph{Microsoft
 \item[versioni:] 2.2.1 e 2.2.3
 \end{description}
 
-Sencha Touch è un framework JavaScript che consente di sviluppare web application per dispositivi mobili sfruttando tecnologie web standard come \acs{HTML5} e \acs{CSS3}; l'obiettivo che ha è quello di riprodurre il look and feel delle applicazioni native per i diversi sistemi operativi mobili e generare applicazioni multipiattaforma, consentendo ad uno sviluppatore di scrivere una sola volta il codice per poi compilarlo per ogni piattaforma desiderata.
+Sencha Touch è un framework JavaScript che consente di sviluppare web application per dispositivi mobili sfruttando tecnologie web standard come \acs{HTML5} e \acs{CSS3}; l'obiettivo che ha è quello di riprodurre il look and feel delle applicazioni native per i diversi sistemi operativi mobili e generare applicazioni multi-piattaforma, consentendo ad uno sviluppatore di scrivere una sola volta il codice per poi compilarlo per ogni piattaforma desiderata.
 
 Attualmente Sencha Touch supporta i sgeuenti sistemi operativi:
 \begin{itemize}
@@ -89,6 +89,7 @@ Ad oggi esso può essere considerato come una distribuzione di Cordova, dal qual
 \item WebOS
 \item Symbian
 \end{itemize}
+
 La compilazione remota consente ad uno sviluppatore di ottenere una build della propria applicazione per ogni piattaforma disponibile senza la necessità di possedere sistemi operativi e \ac{SDK} dedicati.
 
 \subsubsection{Apache Cordova CLI - Adobe PhoneGap CLI}
@@ -99,6 +100,10 @@ Affinché tale tool sia in grado di eseguire il processo di build per la piattaf
 Quest'ultima considerazione non è valida per il sistema di build di PhoneGap, in quanto consente di richiamare dalla \ac{CLI} un tool di compilazione remota, previa registrazione al servizio cloud\footnote{\url{https://build.phonegap.com/}}.
 
 \section{Sencha Architect}
+\begin{description}
+\item[versioni: 2.2.2 e 2.2.3]
+\end{description}
+
 È lo strumento ufficiale Sencha per la creazione di interfacce grafiche sfruttando le \ac{API} di Sencha Touch oppure di Ext JS\footnote{Framework JavaScript per lo  sviluppo di desktop web application.}.
 
 Tale strumento si è dimostrato molto utile nella creazione di interfacce grafiche complesse, velocizzando notevolmente la creazioni dei diversi contenitori ed elementi grafici da inserire al loro interno.
@@ -112,16 +117,25 @@ Fornisce le \ac{API} e gli strumenti necessari per sviluppare, testare e compila
 \begin{description}
 \item[SDK tools:] contiene strumenti per effettuare il debug e i test delle applicazioni;
 \item[SDK platform-tools:] contiene strumenti dipendenti dalla piattaforma per effettuare lo sviluppo e il debug delle applicazioni;
-\item[SDK platform:] ogni versione di Android possiede una piattaforma specifica che include il file \texttt{android.jar} 
+\item[SDK platform:] ogni versione di Android possiede una piattaforma specifica che include il file \code{android.jar} con la libreria completa;
+\item[system images:] ogni piattaforma fornisce una o più immagini di sistema necessarie per l'utilizzo dell'emulatore;
+\item[sources:] contiene una copia dei sorgenti della piattaforma.
 \end{description}
 
 \section{Eclipse}
+\begin{description}
+\item[versione: 4.3.1 Kepler]
+\end{description}
 
-\subsection{Android Developer Tool}
+È un \ac{IDE} multi-linguaggio e multi-piattaforma costituito da uno spazio di lavoro di base e da numerosi plugin aggiuntivi, installabili separatamente, che forniscono funzionalità supplementari al sistema.
 
+Il set di base fornisce gli strumenti necessari allo sviluppo di applicazioni Java ma tramite plugin è possibile ampliare i linguaggi supportati: infatti per sviluppare applicazioni Andorid è necessario installare il plugin \ac{ADT}.
 
 \section{Weinre}
 
 \section{Jasmine}
 
 \section{JSDuck}
+È uno strumento che permette di generare la documentazione del codice utilizzando i commenti opportunamente strutturati con l'utilizzo di tag appropriati.
+
+Utilizza \emph{Markdown}\footnote{\url{http://daringfireball.net/projects/markdown/}} per convertire il testo dei commenti in codice \ac{HTML} e costruire un documento ipertestuale navigabile offline che contiene, in modo ordinato e facilmente consultabile, tutta la documentazione dell'applicazione.

@@ -1,3 +1,281 @@
 %************************************************
 \chapter{Analisi dei requisiti}\label{ch:requisiti}
 %************************************************
+Il seguente capitolo descrive le caratteristiche principali che l'azienda \myCompany richiede vengano implementate nel prototipo: dopo una descrizione generale vengono descritti i casi d'uso rilevati e i requisiti che ne derivano.
+
+\section{Descrizione generale}
+L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo.
+Le funzionalità che risulteranno essere perfettamente funzionanti verranno integrate nell'applicativo che l'azienda sta sviluppando su richiesta di alcuni clienti.
+
+Le funzionalità a cui l'azienda è interessata sono le seguenti:
+\begin{itemize}
+\item Scansione barcode;
+\item Cattura immagini, video, registrazioni audio;
+\item Lettura elenco contatti del dispositivo in uso;
+\item Recupero informazioni proprie del dispositivo;
+\item Backup e ripristino dei dati dell'applicazione sulla memoria di massa del dispositivo tramite un database \emph{SQLite}\footnote{\url{http://www.sqlite.org/}};
+\item Geolocalizzazione.
+\end{itemize}
+
+Essendo tale applicazione un prototipo interno all'azienda non sono richiesti particolari vincoli di efficienza e un'interfaccia grafica accattivante: è stata lasciata libera iniziativa di sviluppare diverse soluzioni con l'obiettivo finale di ottenere un resoconto dettagliato dei risultati ottenuti.
+
+\section{Casi d'uso}
+Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo richiesto.
+Essi hanno un codice identificativo univoco, nella forma:
+\begin{center}
+UC[codice univoco del padre].[codice progressivo di livello]
+\end{center}
+Il codice progressivo di livello può includere diversi livelli di gerarchia separati da un punto.
+
+\subsection{Caso d'uso UC1: Scenario principale}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.45]{gfx/useCase/UC1_Scenario_principale.pdf}
+\caption{Caso d'uso UC1: Scenario principale}
+\label{fig:UC1}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha avviato correttamente l'applicazione e questa è pronta all'uso. Egli può effettuare varie operazioni: leggere codici a barre, recuperare i contatti del dispositivo, recuperare le informazioni del dispositivo, catturare file multimediali, recuperare la posizione corrente dal \ac{GPS}, gestire le proprie informazioni personali, consultare la galleria immagini e la libreria audio/video, salvare e visualizzare i dati catturati tramite il dispositivo;
+\item[precondizione:] L'applicazione è stata avviata ed è pronta all'uso.
+\item[flusso principale degli eventi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente può leggere codici a barre;
+	\item L'utente può recuperare i contatti del dispositivo;
+	\item L'utente può recuperare le informazioni del dispositivo;
+	\item L'utente può catturare file multimediali;
+	\item L'utente può recuperare la posizione corrente;
+	\item L'utente può gestire le proprie informazioni personali;
+	\item L'utente può consultare la galleria;
+	\item L'utente può consultare la libreria;
+	\end{enumerate}
+\item[inclusioni:] \hfill \\
+	\begin{enumerate}
+	\item Il sistema salva i dati acquisiti;
+	\item Il sistema visualizza i dati acquisiti;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+\subsection{Caso d'uso UC1.1: Lettura barcode}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto l'opzione di lettura di un codice a barre;
+\item[precondizione:] Il sistema è pronto per la lettura di un nuovo codice;
+\item[scenari alternativi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente decide di annullare l'operazione di lettura; il sistema torna allo stato precedente la scelta dell'utente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha letto il codice e procede con il salvataggio e la visualizzazione dei dati.
+\end{description}
+
+\subsection{Caso d'uso UC1.2: Cattura file multimediale}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/UC1-2_Cattura_file_multimediale.pdf}
+\caption{Caso d'uso UC1.2: Cattura file multimediale}
+\label{fig:UC1.2}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di un file multimediale e può decidere quale tipo di file catturare: immagine, audio o video;
+\item[precondizione:] Il sistema mostra le possibili scelte all'utente;
+\item[flusso principale degli eventi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente può catturare un'immagine;
+	\item L'utente può catturare un video;
+	\item L'utente può catturare un file audio;
+	\end{enumerate}
+\item[postcondizione:] Il sistema è pronto per la cattura del file multimediale prescelto.
+\end{description}
+
+\subsection{Caso d'uso UC1.2.1: Cattura immagine}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/UC1-2-1_Cattura_immagine.pdf}
+\caption{Caso d'uso UC1.2.1: Cattura immagine}
+\label{fig:UC1.2}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di un'immagine e può scegliere se utilizzare la fotocamera del dispositivo oppure la galleria dello stesso;
+\item[precondizione:] Il sistema mostra le possibili scelte all'utente;
+\item[flusso principale degli eventi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente può catturare un'immagine dalla fotocamera del dispositivo;
+	\item L'utente può catturare un'immagine dalla galleria del dispositivo;
+	\end{enumerate}
+\item[postcondizione:] Il sistema è pronto per la cattura dell'immagine dalla fonte prescelta.
+\end{description}
+
+\subsection{Caso d'uso UC1.2.2: Cattura immagine dalla fotocamera del dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla fotocamera del dispositivo;
+\item[precondizione:] Il sistema è pronto per la cattura di una nuova immagine dalla fotocamera;
+\item[scenari alternativi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha catturato una nuova immagine e procede con il salvataggio.
+\end{description}
+
+\subsection{Caso d'uso UC1.2.2: Cattura immagine dalla galleria del dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla galleria del dispositivo;
+\item[precondizione:] Il sistema è pronto per la cattura di una nuova immagine dalla galleria;
+\item[scenari alternativi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha catturato una nuova immagine e procede con il salvataggio.
+\end{description}
+
+\subsection{Caso d'uso UC1.2.2: Cattura video}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la cattura di un video;
+\item[precondizione:] Il sistema è pronto per la cattura di un nuovo video;
+\item[scenari alternativi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha catturato una nuovo video e procede con il salvataggio.
+\end{description}
+
+\subsection{Caso d'uso UC1.2.3: Cattura audio}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la cattura di un file audio;
+\item[precondizione:] Il sistema è pronto per la cattura di una nuovo file audio;
+\item[scenari alternativi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha catturato una nuovo file audio e procede con il salvataggio.
+\end{description}
+
+\subsection{Caso d'uso UC1.3: Recupero informazioni dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto il recupero delle informazione del dispositivo;
+\item[precondizione:] Il sistema è pronto per il recupero delle informazioni;
+\item[postcondizione:] Il sistema ha recuperato le informazioni e procede con il salvataggio e la visualizzazione.
+\end{description}
+
+\subsection{Caso d'uso UC1.4: Recupero posizione corrente}
+\begin{description}
+\item[attori:] Utente,
+\item[scopo e descrizione:] L'utente ha scelto il recupero della posizione corrente tramite il \ac{GPS} del dispositivo;
+\item[precondizione:] Il sistema è pronto per il recupero della posizione;
+\item[postcondizione:] Il sistema ha recuperato la posizione del dispositivo e procede con il salvataggio e la visualizzazione.
+\end{description}
+
+\subsection{Caso d'uso UC1.5: Lettura contatti dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la lettura dei contatti dal dispositivo;
+\item[precondizione:] Il sistema è pronto per la lettura dei contatti presenti nel dispositivo;
+\item[postcondizione:] Il sistema ha recuperato i contatti del dispositivo e procede con il salvataggio e la visualizzazione.
+\end{description}
+
+\subsection{Caso d'uso UC1.6: Gestione informazioni personali utente}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/UC1-6_Gestione_informazioni_personali_utente.pdf}
+\caption{Caso d'uso UC1.6: Gestione informazioni personali utente}
+\label{fig:UC1.6}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha scelto la gestione delle informazioni personali e può procedere con la compilazione di tali informazioni oppure salvare, eliminare, effettuare un backup o un ripristino di tali dati;
+\item[precondizione:] Il sistema è pronto per gestire le informazioni personali dell'utente;
+\item[flusso principale degli eventi:] \hfill \\
+	\begin{enumerate}
+	\item L'utente può compilare le informazioni personali;
+	\item L'utente può salvare le informazioni personali;
+	\item L'utente può eliminare le informazioni personali;
+	\item L'utente può effettuare un backup delle informazioni personali;
+	\item L'utente può effettuare un ripristino delle informazioni personali;
+	\end{enumerate}
+\item[postcondizione:] Il sistema è pronto ad eseguire l'opzione scelta dell'utente;
+\end{description}
+
+\subsection{Caso d'uso UC1.6.1: Compilazione informazioni personali utente}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.6.2: Salvataggio informazioni personali utente}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.6.3: Eliminazione informazioni personali utente}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.6.4: Backup informazioni personali utente}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.6.5: Ripristino informazioni personali utente}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.7: Consultazione galleria immagini}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.8: Consultazione libreria audio/video}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.9: Visualizzazione dato acquisito}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\subsection{Caso d'uso UC1.10: Salvataggio dato acquisito}
+\begin{description}
+\item[attori:]
+\item[scopo e descrizione:]
+\item[precondizione:]
+\item[postcondizione:]
+\end{description}
+
+\section{Requisiti}
