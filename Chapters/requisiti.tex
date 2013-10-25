@@ -4,7 +4,7 @@
 Il seguente capitolo descrive le caratteristiche principali che l'azienda \myCompany richiede vengano implementate nel prototipo: dopo una descrizione generale vengono descritti i casi d'uso rilevati e i requisiti che ne derivano.
 
 \section{Descrizione generale}
-L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo.
+L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti (Sencha Touch e Cordova)per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo funzionante su piattaforma Android e iOS.
 Le funzionalità che risulteranno essere perfettamente funzionanti verranno integrate nell'applicativo che l'azienda sta sviluppando su richiesta di alcuni clienti.
 
 Le funzionalità a cui l'azienda è interessata sono le seguenti:
@@ -39,7 +39,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha avviato correttamente l'applicazione e questa è pronta all'uso. Egli può effettuare varie operazioni: leggere codici a barre, recuperare i contatti del dispositivo, recuperare le informazioni del dispositivo, catturare file multimediali, recuperare la posizione corrente dal \ac{GPS}, gestire le proprie informazioni personali, consultare la galleria immagini e la libreria audio/video, salvare e visualizzare i dati catturati tramite il dispositivo;
 \item[precondizione:] L'applicazione è stata avviata ed è pronta all'uso.
-\item[flusso principale degli eventi:] \hfill \\
+\item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
 	\item L'utente può leggere codici a barre;
 	\item L'utente può recuperare i contatti del dispositivo;
@@ -50,7 +50,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 	\item L'utente può consultare la galleria;
 	\item L'utente può consultare la libreria;
 	\end{enumerate}
-\item[inclusioni:] \hfill \\
+\item[inclusioni:] \hfill 
 	\begin{enumerate}
 	\item Il sistema salva i dati acquisiti;
 	\item Il sistema visualizza i dati acquisiti;
@@ -63,7 +63,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto l'opzione di lettura di un codice a barre;
 \item[precondizione:] Il sistema è pronto per la lettura di un nuovo codice;
-\item[scenari alternativi:] \hfill \\
+\item[scenari alternativi:] \hfill 
 	\begin{enumerate}
 	\item L'utente decide di annullare l'operazione di lettura; il sistema torna allo stato precedente la scelta dell'utente;
 	\end{enumerate}
@@ -82,7 +82,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di un file multimediale e può decidere quale tipo di file catturare: immagine, audio o video;
 \item[precondizione:] Il sistema mostra le possibili scelte all'utente;
-\item[flusso principale degli eventi:] \hfill \\
+\item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
 	\item L'utente può catturare un'immagine;
 	\item L'utente può catturare un video;
@@ -96,14 +96,14 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \centering
 \includegraphics[scale=0.6]{gfx/useCase/UC1-2-1_Cattura_immagine.pdf}
 \caption{Caso d'uso UC1.2.1: Cattura immagine}
-\label{fig:UC1.2}
+\label{fig:UC1.2.1}
 \end{figure}
 
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di un'immagine e può scegliere se utilizzare la fotocamera del dispositivo oppure la galleria dello stesso;
 \item[precondizione:] Il sistema mostra le possibili scelte all'utente;
-\item[flusso principale degli eventi:] \hfill \\
+\item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
 	\item L'utente può catturare un'immagine dalla fotocamera del dispositivo;
 	\item L'utente può catturare un'immagine dalla galleria del dispositivo;
@@ -111,24 +111,24 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema è pronto per la cattura dell'immagine dalla fonte prescelta.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.2: Cattura immagine dalla fotocamera del dispositivo}
+\subsection{Caso d'uso UC1.2.1.1: Cattura immagine dalla fotocamera del dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla fotocamera del dispositivo;
 \item[precondizione:] Il sistema è pronto per la cattura di una nuova immagine dalla fotocamera;
-\item[scenari alternativi:] \hfill \\
+\item[scenari alternativi:] \hfill 
 	\begin{enumerate}
 	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
 	\end{enumerate}
 \item[postcondizione:] Il sistema ha catturato una nuova immagine e procede con il salvataggio.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.2: Cattura immagine dalla galleria del dispositivo}
+\subsection{Caso d'uso UC1.2.1.2: Cattura immagine dalla galleria del dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla galleria del dispositivo;
 \item[precondizione:] Il sistema è pronto per la cattura di una nuova immagine dalla galleria;
-\item[scenari alternativi:] \hfill \\
+\item[scenari alternativi:] \hfill 
 	\begin{enumerate}
 	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
 	\end{enumerate}
@@ -140,7 +140,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un video;
 \item[precondizione:] Il sistema è pronto per la cattura di un nuovo video;
-\item[scenari alternativi:] \hfill \\
+\item[scenari alternativi:] \hfill 
 	\begin{enumerate}
 	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
 	\end{enumerate}
@@ -152,7 +152,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un file audio;
 \item[precondizione:] Il sistema è pronto per la cattura di una nuovo file audio;
-\item[scenari alternativi:] \hfill \\
+\item[scenari alternativi:] \hfill 
 	\begin{enumerate}
 	\item L'utente decide di annullare l'operazione di cattura; il sistema torna allo stato precedente la scelta dell'utente;
 	\end{enumerate}
@@ -195,7 +195,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la gestione delle informazioni personali e può procedere con la compilazione di tali informazioni oppure salvare, eliminare, effettuare un backup o un ripristino di tali dati;
 \item[precondizione:] Il sistema è pronto per gestire le informazioni personali dell'utente;
-\item[flusso principale degli eventi:] \hfill \\
+\item[flusso principale degli eventi:] \hfill
 	\begin{enumerate}
 	\item L'utente può compilare le informazioni personali;
 	\item L'utente può salvare le informazioni personali;
@@ -287,14 +287,14 @@ R[importanza][tipo][codice]
 \end{center}
 
 \begin{description}
-\item[importanza:] \hfill \\
-	\setcounter{enumi}{-1}
+\item[importanza:] \hfill 
 	\begin{enumerate}
+	\setcounter{enumi}{-1}
 	\item Requisito obbligatorio;
 	\item Requisito desiderabile;
 	\item Requisito opzionale.
 	\end{enumerate}
-\item[tipo:] \hfill \\
+\item[tipo:] \hfill 
 	\begin{description}
 	\item[F:] Funzionale;
 	\item[Q:] Di qualità;
@@ -303,3 +303,15 @@ R[importanza][tipo][codice]
 	\end{description}
 \item[codice:] è il codice univoco di ogni requisito espresso in modo gerarchico.
 \end{description}
+
+\subsection{Requisiti funzionali}
+\input{Chapters/Tabelle/funzionali}
+
+\subsection{Requisiti di vincolo}
+\input{Chapters/Tabelle/vincolo}
+
+\subsection{Requisiti prestazionali}
+\input{Chapters/Tabelle/prestazionali}
+
+\subsection{Requisiti di qualità}
+\input{Chapters/Tabelle/qualita}

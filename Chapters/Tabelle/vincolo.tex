@@ -1,0 +1,28 @@
+%**************************************
+%    tabella requisiti di vincolo
+%**************************************
+\begin{longtable}{cp{0.7\textwidth}c}
+\caption{Tabella dei requisiti di vincolo}
+\label{tab:requsiti vincolo} \\
+%intestazione iniziale
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endfirsthead
+%intestazione normale
+\multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endhead
+%piede normale
+\midrule
+\multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
+\endfoot
+%piede finale
+\bottomrule
+\multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
+\endlastfoot
+%corpo della tabella
+R
+\end{longtable}
