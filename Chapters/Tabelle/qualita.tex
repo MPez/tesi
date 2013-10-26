@@ -1,3 +1,29 @@
 %**************************************
 %    tabella requisiti di qualità
 %**************************************
+\begin{longtable}{lp{0.65\textwidth}l}
+\caption{Tabella dei requisiti di qualità}
+\label{tab:requsiti qualità} \\
+%intestazione iniziale
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endfirsthead
+%intestazione normale
+\multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endhead
+%piede normale
+\midrule
+\multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
+\endfoot
+%piede finale
+\bottomrule
+%\multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
+\endlastfoot
+%corpo della tabella
+R0Q1 & Deve essere prodotta la documentazione del codice sorgente dell'applicazione 	& Capitolato \\[7mm]
+R0Q2 & Deve essere prodotto un resoconto dettagliato delle funzionalità implementate	& Capitolato \\
+\end{longtable}
