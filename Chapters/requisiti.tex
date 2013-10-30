@@ -13,7 +13,24 @@ I requisiti vengono individuati dall'analisi effettuata sulle richieste dell'azi
 \begin{center}
 R[importanza][tipo][codice]
 \end{center}
-Il codice può includere diversi livelli di gerarchia separati da un punto.
+
+\begin{description}
+\item[importanza:] \hfill 
+	\begin{enumerate}
+	\setcounter{enumi}{-1}
+	\item Requisito obbligatorio;
+	\item Requisito desiderabile;
+	\item Requisito opzionale.
+	\end{enumerate}
+\item[tipo:] \hfill 
+	\begin{description}
+	\item[F:] Funzionale;
+	\item[Q:] Di qualità;
+	\item[P:] Prestazionale;
+	\item[V:] Di vincolo.
+	\end{description}
+\item[codice:] è il codice univoco di ogni requisito espresso in modo gerarchico.
+\end{description}
 
 \section{MyNotes}
 \subsection{Descrizione generale}
@@ -57,7 +74,7 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente desidera eseguire la gestione delle note;
-\item[precondizione:] Il sistema è pronto a gestire le note.
+\item[precondizione:] Il sistema è pronto a gestire le note;
 \item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
 	\item L'utente può visualizzare l'elenco delle note presenti nel dispositivo;
@@ -71,7 +88,7 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente desidera visualizzare l'elenco delle note esistenti;
-\item[precondizione:] Il sistema è pronto a visualizzare le note.
+\item[precondizione:] Il sistema è pronto a visualizzare le note;
 \item[postcondizione:] Il sistema ha visualizzato le note esistenti.
 \end{description}
 
@@ -86,9 +103,9 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente desidera creare una nuova nota;
-\item[precondizione:] Il sistema è pronto alla creazione di una nuova nota.
+\item[precondizione:] Il sistema è pronto alla creazione di una nuova nota;
 \item[flusso principale degli eventi:] \hfill 
-	\begin{enummerate}
+	\begin{enumerate}
 	\item L'utente può compilare la descrizione della nota;
 	\item L'utente può salvare la nota;
 	\item L'utente può eliminare la nota;
@@ -97,12 +114,443 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 	\begin{enumerate}
 	\item Solo nel caso che l'utente desideri eliminare la nota corrente gli viene richiesta la conferma o l'annullamento dell'azione;
 	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito il salvataggio della nuova nota o la cancellazione della stessa.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.1: Compilazione descrizione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera compilare la descrizione di una nuova nota;
+\item[precondizione:] Il sistema ha generato una nuova nota, la visualizza ed è pronto alla sua compilazione;
+\item[postcondizione:] Il sistema visualizza la descrizione inserita dall'utente ed è pronto al salvataggio o alla cancellazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.2: Salvataggio nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera salvare la nuova nota;
+\item[precondizione:] Il sistema visualizza la descrizione inserita dall'utente ed è pronto al salvataggio;
+\item[postcondizione:] Il sistema ha eseguito correttamente il salvataggio della nuova nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.3: Eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare la nuova nota;
+\item[precondizione:] Il sistema visualizza la descrizione inserita dall'utente ed è pronto alla cancellazione;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nuova nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.4: Conferma / Annulla eliminazione}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-1-2-4_Conferma-Annulla_eliminazione.pdf}
+\caption{Caso d'uso UC1.1.2.4: Conferma - Annulla eliminazione}
+\label{fig:My notes UC1.1.2.4}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare la nuova nota;
+\item[precondizione:] Il sistema visualizza la descrizione inserita dall'utente ed è pronto alla cancellazione;
+\item[flusso principale degli eventi:] \hfill
+	\begin{enumerate}
+	\item L'utente può confermare l'eliminazione della nota;
+	\item L'utente può annullare l'eliminazione della nota;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nuova nota o l'annullamento dell'operazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.4.1: Conferma eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera confermare l'eliminazione della nota;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione della nota;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nuova nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2.4.2: Annulla eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera annullare l'eliminazione della nota;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione della nota;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'annullamento dell'eliminazione della nuova nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3: Modifica nota esistente}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{gfx/useCase/MN_UC1-1-3_Modifica_nota_esistente.pdf}
+\caption{Caso d'uso UC1.1.3: Modifica nota esistente}
+\label{fig:My notes UC1.1.3}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera modificare una nota esistente;
+\item[precondizione:] Il sistema visualizza la nota da modificare.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può modificare la descrizione della nota;
+	\item L'utente può salvare la nota;
+	\item L'utente può eliminare la nota;
+	\end{enumerate}
+\item[estensioni:] \hfill
+	\begin{enumerate}
+	\item Solo nel caso che l'utente desideri eliminare la nota corrente gli viene richiesta la conferma o l'annullamento dell'azione;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito il salvataggio delle modifiche alla nota o la cancellazione della stessa.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.1: Modifica descrizione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera modificare la descrizione di una nota esistente;
+\item[precondizione:] Il sistema visualizza la nota ed è pronto alla sua modifica;
+\item[postcondizione:] Il sistema visualizza la descrizione modificata dall'utente ed è pronto al salvataggio o alla cancellazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.2: Salvataggio nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera salvare le modifiche alla nota;
+\item[precondizione:] Il sistema visualizza la descrizione modificata dall'utente ed è pronto al salvataggio;
+\item[postcondizione:] Il sistema ha eseguito correttamente il salvataggio della nota modificata.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.3: Eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare una nota esistente;
+\item[precondizione:] Il sistema visualizza la descrizione della nota ed è pronto alla cancellazione;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nota esistente.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.4: Conferma / Annulla eliminazione}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-1-3-4_Conferma-Annulla_eliminazione.pdf}
+\caption{Caso d'uso UC1.1.3.4: Conferma - Annulla eliminazione}
+\label{fig:My notes UC1.1.3.4}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare una nota esistente;
+\item[precondizione:] Il sistema visualizza la descrizione della nota ed è pronto alla cancellazione;
+\item[flusso principale degli eventi:] \hfill
+	\begin{enumerate}
+	\item L'utente può confermare l'eliminazione della nota;
+	\item L'utente può annullare l'eliminazione della nota;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nota o l'annullamento dell'operazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.4.1: Conferma eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera confermare l'eliminazione della nota;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione della nota;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione della nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.3.4.2: Annulla eliminazione nota}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera annullare l'eliminazione della nota;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione della nota;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'annullamento dell'eliminazione della nota.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2: Gestione autori}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-2_Gestione_autori.pdf}
+\caption{Caso d'uso UC1.2: Gestione autori}
+\label{fig:My notes UC1.2}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eseguire la gestione degli autori;
+\item[precondizione:] Il sistema è pronto a gestire gli autori.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può visualizzare l'elenco degli autori presenti nel dispositivo;
+	\item L'utente può creare un nuovo autore;
+	\item L'utente può modificare un autore esistente;
+	\end{enumerate}
 \item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
 \end{description}
 
+\subsubsection{Caso d'uso UC1.2.1: Visualizzazione elenco autori}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera visualizzare l'elenco degli autori esistenti;
+\item[precondizione:] Il sistema è pronto a visualizzare gli autori.
+\item[postcondizione:] Il sistema ha visualizzato gli autori esistenti.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2: Creazione nuovo autore}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{gfx/useCase/MN_UC1-2-2_Creazione_nuovo_autore.pdf}
+\caption{Caso d'uso UC1.2.2: Creazione nuovo autore}
+\label{fig:My notes UC1.2.2}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera creare un nuovo autore;
+\item[precondizione:] Il sistema è pronto alla creazione di un nuovo autore.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può compilare le informazioni dell'autore;
+	\item L'utente può salvare l'autore;
+	\item L'utente può eliminare l'autore;
+	\end{enumerate}
+\item[estensioni:] \hfill
+	\begin{enumerate}
+	\item Solo nel caso che l'utente desideri eliminare l'autore corrente gli viene richiesta la conferma o l'annullamento dell'azione;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito il salvataggio del nuovo autore o la cancellazione dello stesso.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.1: Compilazione informazioni autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera compilare le informazioni di un nuovo autore;
+\item[precondizione:] Il sistema ha generato un nuovo autore, lo visualizza ed è pronto alla sua compilazione;
+\item[postcondizione:] Il sistema visualizza le informazioni inserite dall'utente ed è pronto al salvataggio o alla cancellazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.2: Salvataggio autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera salvare il nuovo autore;
+\item[precondizione:] Il sistema visualizza le informazioni inserite dall'utente ed è pronto al salvataggio;
+\item[postcondizione:] Il sistema ha eseguito correttamente il salvataggio del nuovo autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.3: Eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare il nuovo autore;
+\item[precondizione:] Il sistema visualizza le informazioni inserite dall'utente ed è pronto alla cancellazione;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione del nuovo autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.4: Conferma / Annulla eliminazione}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-2-2-4_Conferma-Annulla_eliminazione.pdf}
+\caption{Caso d'uso UC1.2.2.4: Conferma - Annulla eliminazione}
+\label{fig:My notes UC1.2.2.4}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare il nuovo autore;
+\item[precondizione:] Il sistema visualizza le informazioni inserite dall'utente ed è pronto alla cancellazione;
+\item[flusso principale degli eventi:] \hfill
+	\begin{enumerate}
+	\item L'utente può confermare l'eliminazione dell'autore;
+	\item L'utente può annullare l'eliminazione dell'autore;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione del nuovo autore o l'annullamento dell'operazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.4.1: Conferma eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera confermare l'eliminazione dell'autore;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione dell'autore;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione del nuovo autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.2.4.2: Annulla eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera annullare l'eliminazione dell'autore;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione dell'autore;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'annullamento dell'eliminazione del nuovo autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3: Modifica autore esistente}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{gfx/useCase/MN_UC1-2-3_Modifica_autore_esistente.pdf}
+\caption{Caso d'uso UC1.2.3: Modifica autore esistente}
+\label{fig:My notes UC1.2.3}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera modificare un autore esistente;
+\item[precondizione:] Il sistema visualizza l'autore da modificare.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può modificare le informazioni dell'autore;
+	\item L'utente può salvare l'autore;
+	\item L'utente può eliminare l'autore;
+	\end{enumerate}
+\item[estensioni:] \hfill
+	\begin{enumerate}
+	\item Solo nel caso che l'utente desideri eliminare l'autore corrente gli viene richiesta la conferma o l'annullamento dell'azione;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito il salvataggio delle modifiche all'autore o la cancellazione dello stesso.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.1: Modifica informazioni autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera modificare le informazioni di un autore esistente;
+\item[precondizione:] Il sistema visualizza un autore esistente ed è pronto alla sua modifica;
+\item[postcondizione:] Il sistema visualizza le informazioni modificate dall'utente ed è pronto al salvataggio o alla cancellazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.2: Salvataggio autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera salvare le modifiche all'autore;
+\item[precondizione:] Il sistema visualizza le informazioni modificate dall'utente ed è pronto al salvataggio;
+\item[postcondizione:] Il sistema ha eseguito correttamente il salvataggio dell'autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.3: Eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare un autore esistente;
+\item[precondizione:] Il sistema visualizza le informazioni dell'autore ed è pronto alla cancellazione;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione dell'autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.4: Conferma / Annulla eliminazione}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-2-3-4_Conferma-Annulla_eliminazione.pdf}
+\caption{Caso d'uso UC1.2.3.4: Conferma - Annulla eliminazione}
+\label{fig:My notes UC1.2.3.4}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eliminare un autore esistente;
+\item[precondizione:] Il sistema visualizza le informazioni dell'autore ed è pronto alla cancellazione;
+\item[flusso principale degli eventi:] \hfill
+	\begin{enumerate}
+	\item L'utente può confermare l'eliminazione dell'autore;
+	\item L'utente può annullare l'eliminazione dell'autore;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione dell'autore esistente o l'annullamento dell'operazione.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.4.1: Conferma eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera confermare l'eliminazione dell'autore;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione dell'autore;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'eliminazione dell'autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.2.3.4.2: Annulla eliminazione autore}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera annullare l'eliminazione dell'autore;
+\item[precondizione:] Il sistema chiede conferma dell'eliminazione dell'autore;
+\item[postcondizione:] Il sistema ha eseguito correttamente l'annullamento dell'eliminazione dell'autore.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.3: Sincronizzazione dati}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-3_Sincronizzazione_dati.pdf}
+\caption{Caso d'uso UC1.3: Sincronizzazione dati}
+\label{fig:My notes UC1.3}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera sincronizzare i dati con il server;
+\item[precondizione:] Il sistema è pronto per la sincronizzazione dei dati; è presente una connessione internet.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può effettuare il download dei dati presenti nel server;
+	\item L'utente può effettuare l'upload nel server dei dati presenti nel dispositivo;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.3.1: Download dati dal server}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera scaricare i dati dal server;
+\item[precondizione:] Il sistema è pronto per lo scaricamento dei dati; è presente una connessione internet.
+\item[postcondizione:] Il sistema ha eseguito correttamente il download dei dati presenti nel server.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.3.2: Upload dati sul server}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera caricare i dati sul server;
+\item[precondizione:] Il sistema è pronto per il caricamento dei dati; è presente una connessione internet.
+\item[postcondizione:] Il sistema ha eseguito correttamente l'upload nel server dei dati presenti nel dispositivo.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.4: Gestione informazioni dispositivo}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-4_Gestione_informazioni_dispositivo.pdf}
+\caption{Caso d'uso UC1.4: Gestione informazioni dispositivo}
+\label{fig:My notes UC1.4}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera gestire le informazioni del dispositivo;
+\item[precondizione:] Il sistema è pronto per la gestione delle informazioni del dispositivo;
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può compilare le informazioni del dispositivo;
+	\item L'utente può salvare le informazioni del dispositivo;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.4.1: Compilazione informazioni dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera compilare le informazioni del dispositivo;
+\item[precondizione:] Il sistema visualizza la scheda delle informazioni del dispositivo pronta per essere compilata;
+\item[postcondizione:] Il sistema visualizza le informazioni inserite dall'utente ed è pronto al salvataggio.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.4.2: Salvataggio informazioni dispositivo}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera salvare le informazioni del dispositivo;
+\item[precondizione:] Il sistema è pronto per il salvataggio delle informazioni del dispositivo;
+\item[postcondizione:] Il sistema ha eseguito correttamente il salvataggio delle informazioni dispositivo.
+\end{description}
 
 \subsection{Requisiti}
+Vengono ora descritti i requisiti suddivisi per tipologia.
 
+\subsubsection{Requisiti funzionali}
+Di seguito viene riportata la tabella che esprime i requisiti funzionali.
+\input{Chapters/Tabelle/MyNotes_funzionali}
+
+\subsubsection{Requisiti di vincolo}
+Di seguito viene riportata la tabella che esprime i requisiti di vincolo.
+\input{Chapters/Tabelle/MyNotes_vincolo}
+
+%\subsection{Requisiti prestazionali}
+%Di seguito viene riportata la tabella che esprime i requisiti prestazionali.
+%\input{Chapters/Tabelle/MyNotes_prestazionali}
+
+\subsubsection{Requisiti di qualità}
+Di seguito viene riportata la tabella che esprime i requisiti di qualità.
+\input{Chapters/Tabelle/MyNotes_qualita}
 
 \section{SensorDevice}
 \subsection{Descrizione generale}
@@ -377,25 +825,7 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 
 \newpage
 \subsection{Requisiti}
-
-
-\begin{description}
-\item[importanza:] \hfill 
-	\begin{enumerate}
-	\setcounter{enumi}{-1}
-	\item Requisito obbligatorio;
-	\item Requisito desiderabile;
-	\item Requisito opzionale.
-	\end{enumerate}
-\item[tipo:] \hfill 
-	\begin{description}
-	\item[F:] Funzionale;
-	\item[Q:] Di qualità;
-	\item[P:] Prestazionale;
-	\item[V:] Di vincolo.
-	\end{description}
-\item[codice:] è il codice univoco di ogni requisito espresso in modo gerarchico.
-\end{description}
+Vengono ora descritti i requisiti suddivisi per tipologia.
 
 \subsubsection{Requisiti funzionali}
 Di seguito viene riportata la tabella che esprime i requisiti funzionali.

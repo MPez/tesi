@@ -1,0 +1,31 @@
+%**************************************
+%    tabella requisiti di vincolo
+%**************************************
+\begin{longtable}{lp{0.65\textwidth}l}
+\caption{Tabella dei requisiti di vincolo}
+\label{tab:requsiti vincolo} \\
+%intestazione iniziale
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endfirsthead
+%intestazione normale
+\multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endhead
+%piede normale
+\midrule
+\multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
+\endfoot
+%piede finale
+\bottomrule
+\multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
+\endlastfoot
+%corpo della tabella
+R0V1 & L'applicazione deve essere funzionante su piattaforma Android 				& Capitolato \\[7mm]
+R0V2 & L'applicazione deve essere funzionante su piattaforma iOS 					& Capitolato \\[7mm]
+R0V3 & L'applicazione deve essere sviluppata con Sencha Touch 2 					& Capitolato \\[7mm]
+R2V4 & L'applicazione deve essere sviluppata con Apache Cordova (Adobe PhoneGap) 	& Capitolato \\
+\end{longtable}

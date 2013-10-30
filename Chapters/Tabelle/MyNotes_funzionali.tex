@@ -1,0 +1,164 @@
+%**************************************
+%    tabella requisiti funzionali
+%**************************************
+\begin{longtable}{lp{0.65\textwidth}l}
+\caption{Tabella dei requisiti funzionali - MyNotes}
+\label{tab:requsiti funzionali MyNotes} \\
+%intestazione iniziale
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endfirsthead
+%intestazione normale
+\multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
+\toprule
+Codice & Descrizione & Fonte \\
+\midrule
+\endhead
+%piede normale
+\midrule
+\multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
+\endfoot
+%piede finale
+\bottomrule
+\multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
+\endlastfoot
+%corpo della tabella
+%gestione nota
+\multirow{4}*{R0F1}
+& \multirow{4}*{\parbox{0.6\textwidth}{L'utente deve poter eseguire la gestione delle note}}
+& UC1.1 \\
+& & UC1.1.1 \\
+& & UC1.1.2 \\
+& & UC1.1.3 \\[5mm]
+R0F1.1
+& L'utente deve poter visualizzare l'elenco delle note
+& UC1.1.1 \\[5mm]
+%nuova nota
+\multirow{5}*{R0F1.2}
+& \multirow{5}*{\parbox{0.6\textwidth}{L'utente deve poter effettuare la creazione di una nuova nota}}
+& UC1.1.2 \\
+& & UC1.1.2.1 \\
+& & UC1.1.2.2 \\
+& & UC1.1.2.3 \\
+& & UC1.1.2.4 \\[7mm]
+R0F1.2.1
+& L'utente deve poter compilare la descrizione di una nuova nota
+& UC1.1.2.1 \\[7mm]
+R0F1.2.2
+& L'utente deve poter effettuare il salvataggio di una nuova nota
+& UC1.1.2.2 \\[7mm]
+R0F1.2.3
+& L'utente deve poter effettuare l'eliminazione di una nuova nota
+& UC1.1.2.3 \\[7mm]
+\multirow{3}*{R0F1.2.4}
+& \multirow{3}*{\parbox{0.6\textwidth}{L'utente deve poter confermare o annullare l'eliminazione di una nuova nota}}
+& UC1.1.2.4 \\
+& & UC1.1.2.4.1 \\
+& & UC1.1.2.4.2 \\[5mm]
+R0F1.2.4.1
+& L'utente deve poter confermare l'eliminazione di una nuova nota
+& UC1.1.2.4.1 \\[7mm]
+R0F1.2.4.2
+& L'utente deve poter annullare l'eliminazione di una nuova nota
+& UC1.1.2.4.1 \\[5mm]
+%modifica nota
+\multirow{5}*{R0F1.3}
+& \multirow{5}*{\parbox{0.6\textwidth}{L'utente deve poter effettuare la modifica di una nota esistente}}
+& UC1.1.3 \\
+& & UC1.1.3.1 \\
+& & UC1.1.3.2 \\
+& & UC1.1.3.3 \\
+& & UC1.1.3.4 \\[7mm]
+R0F1.3.1
+& L'utente deve poter modificare la descrizione di una nota esistente
+& UC1.1.3.1 \\[7mm]
+R0F1.3.2
+& L'utente deve poter effettuare il salvataggio delle modifiche ad una nota esistente
+& UC1.1.3.2 \\[7mm]
+R0F1.3.3
+& L'utente deve poter effettuare l'eliminazione di una nota esistente
+& UC1.1.3.3 \\[5mm]
+\multirow{3}*{R0F1.3.4}
+& \multirow{3}*{\parbox{0.6\textwidth}{L'utente deve poter confermare o annullare l'eliminazione di una nota esistente}}
+& UC1.1.3.4 \\
+& & UC1.1.3.4.1 \\
+& & UC1.1.3.4.2 \\[7mm]
+R0F1.3.4.1
+& L'utente deve poter confermare l'eliminazione di una nota esistente
+& UC1.1.3.4.1 \\[5mm]
+R0F1.3.4.2
+& L'utente deve poter annullare l'eliminazione di una nota esistente
+& UC1.1.3.4.1 \\[5mm]
+%gestione autori
+\multirow{4}*{R0F2}
+& \multirow{4}*{\parbox{0.6\textwidth}{L'utente deve poter eseguire la gestione degli autori}}
+& UC1.2 \\
+& & UC1.2.1 \\
+& & UC1.2.2 \\
+& & UC1.2.3 \\[5mm]
+R0F2.1
+& L'utente deve poter visualizzare l'elenco degli autori
+& UC1.2.1 \\[7mm]
+%nuovo autore
+\multirow{5}*{R0F2.2}
+& \multirow{5}*{\parbox{0.6\textwidth}{L'utente deve poter effettuare la creazione di un nuovo autore}}
+& UC1.2.2 \\
+& & UC1.2.2.1 \\
+& & UC1.2.2.2 \\
+& & UC1.2.2.3 \\
+& & UC1.2.2.4 \\[7mm]
+R0F2.2.1
+& L'utente deve poter compilare la descrizione di un nuovo autore
+& UC1.2.2.1 \\[7mm]
+R0F2.2.2
+& L'utente deve poter effettuare il salvataggio di un nuovo autore
+& UC1.2.2.2 \\[7mm]
+R0F2.2.3
+& L'utente deve poter effettuare l'eliminazione di un nuovo autore
+& UC1.2.2.3 \\[5mm]
+\multirow{3}*{R0F2.2.4}
+& \multirow{3}*{\parbox{0.6\textwidth}{L'utente deve poter confermare o annullare l'eliminazione di un nuovo autore}}
+& UC1.2.2.4 \\
+& & UC1.2.2.4.1 \\
+& & UC1.2.2.4.2 \\[7mm]
+R0F2.2.4.1
+& L'utente deve poter confermare l'eliminazione di un nuovo autore
+& UC1.2.2.4.1 \\[5mm]
+R0F2.2.4.2
+& L'utente deve poter annullare l'eliminazione di un nuovo autore
+& UC1.2.2.4.1 \\[5mm]
+%modifica autore
+\multirow{5}*{R0F2.3}
+& \multirow{5}*{\parbox{0.6\textwidth}{L'utente deve poter effettuare la modifica di un autore esistente}}
+& UC1.2.3 \\
+& & UC1.2.3.1 \\
+& & UC1.2.3.2 \\
+& & UC1.2.3.3 \\
+& & UC1.2.3.4 \\[7mm]
+R0F2.3.1
+& L'utente deve poter modificare la descrizione di un autore esistente
+& UC1.2.3.1 \\[7mm]
+R0F2.3.2
+& L'utente deve poter effettuare il salvataggio delle modifiche ad un autore esistente
+& UC1.2.3.2 \\[7mm]
+R0F2.3.3
+& L'utente deve poter effettuare l'eliminazione di un autore esistente
+& UC1.2.3.3 \\[5mm]
+\multirow{3}*{R0F2.3.4}
+& \multirow{3}*{\parbox{0.6\textwidth}{L'utente deve poter confermare o annullare l'eliminazione di un autore esistente}}
+& UC1.2.3.4 \\
+& & UC1.2.3.4.1 \\
+& & UC1.2.3.4.2 \\[7mm]
+R0F2.3.4.1
+& L'utente deve poter confermare l'eliminazione di un autore esistente
+& UC1.2.3.4.1 \\[5mm]
+R0F2.3.4.2
+& L'utente deve poter annullare l'eliminazione di un autore esistente
+& UC1.2.3.4.1 \\[5mm]
+%TODO
+
+R0F11
+& L'applicazione deve fornire un'interfaccia utente grafica
+& Capitolato \\
+\end{longtable}
