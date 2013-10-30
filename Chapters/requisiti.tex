@@ -1,9 +1,111 @@
 %************************************************
 \chapter{Analisi dei requisiti}\label{ch:requisiti}
 %************************************************
-Il seguente capitolo descrive le caratteristiche principali che l'azienda \myCompany richiede vengano implementate nel prototipo: dopo una descrizione generale vengono descritti i casi d'uso rilevati e i requisiti che ne derivano.
+Il seguente capitolo descrive le caratteristiche principali che l'azienda \myCompany richiede vengano implementate nei prototipi: dopo una descrizione generale vengono descritti i casi d'uso rilevati e i requisiti che ne derivano.
 
-\section{Descrizione generale}
+I casi d'uso utilizzati per la progettazione dei prototipi hanno un codice identificativo univoco, nella forma:
+\begin{center}
+UC[codice univoco del padre].[codice progressivo di livello]
+\end{center}
+Il codice progressivo di livello può includere diversi livelli di gerarchia separati da un punto.
+
+I requisiti vengono individuati dall'analisi effettuata sulle richieste dell'azienda, oppure emergono dai casi d'uso o nascono da esigenze interne; sono classificati per tipo e importanza secondo la seguente codifica:
+\begin{center}
+R[importanza][tipo][codice]
+\end{center}
+Il codice può includere diversi livelli di gerarchia separati da un punto.
+
+\section{MyNotes}
+\subsection{Descrizione generale}
+Lo scopo del prototipo è  l'implementazione del \emph{SyncEngine} per sviluppare un sistema di gestione note ed autori che sia in grado di lavorare offline e di sincronizzarsi con un server non appena si renda disponibile una connessione internet.
+
+Il componente è già esistente e verranno quindi presentati i casi d'uso e i relativi requisiti solo per l'applicazione che lo deve utilizzare.
+
+\subsection{Casi d'uso}
+Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo \emph{MyNotes}.
+
+\subsubsection{Caso d'uso UC1: Scenario principale}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1_Scenario_principale.pdf}
+\caption{Caso d'uso UC1: Scenario principale}
+\label{fig:My notes UC1}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente ha avviato correttamente l'applicazione e questa è pronta all'uso. Egli può effettuare varie operazioni: eseguire la gestione delle note, degli autori e delle informazioni del dispositivo e sincronizzare i dati con il server remoto;
+\item[precondizione:] L'applicazione è stata avviata ed è pronta all'uso.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può eseguire la gestione delle note;
+	\item L'utente può eseguire la gestione degli autori;
+	\item L'utente può sincronizzare i dati con il server;
+	\item L'utente può eseguire la gestione delle informazioni del dispositivo;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1: Gestione note}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{gfx/useCase/MN_UC1-1_Gestione_note.pdf}
+\caption{Caso d'uso UC1.1: Gestione note}
+\label{fig:My notes UC1.1}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera eseguire la gestione delle note;
+\item[precondizione:] Il sistema è pronto a gestire le note.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enumerate}
+	\item L'utente può visualizzare l'elenco delle note presenti nel dispositivo;
+	\item L'utente può creare una nuova nota;
+	\item L'utente può modificare una nota esistente;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.1: Visualizzazione elenco note}
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera visualizzare l'elenco delle note esistenti;
+\item[precondizione:] Il sistema è pronto a visualizzare le note.
+\item[postcondizione:] Il sistema ha visualizzato le note esistenti.
+\end{description}
+
+\subsubsection{Caso d'uso UC1.1.2: Creazione nuova nota}
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{gfx/useCase/MN_UC1-1-2_Creazione_nuova_nota.pdf}
+\caption{Caso d'uso UC1.1.2: Creazione nuova nota}
+\label{fig:My notes UC1.1.2}
+\end{figure}
+
+\begin{description}
+\item[attori:] Utente;
+\item[scopo e descrizione:] L'utente desidera creare una nuova nota;
+\item[precondizione:] Il sistema è pronto alla creazione di una nuova nota.
+\item[flusso principale degli eventi:] \hfill 
+	\begin{enummerate}
+	\item L'utente può compilare la descrizione della nota;
+	\item L'utente può salvare la nota;
+	\item L'utente può eliminare la nota;
+	\end{enumerate}
+\item[estensioni:] \hfill
+	\begin{enumerate}
+	\item Solo nel caso che l'utente desideri eliminare la nota corrente gli viene richiesta la conferma o l'annullamento dell'azione;
+	\end{enumerate}
+\item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
+\end{description}
+
+
+\subsection{Requisiti}
+
+
+\section{SensorDevice}
+\subsection{Descrizione generale}
 L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti (Sencha Touch e Cordova)per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo funzionante su piattaforma Android e iOS.
 Le funzionalità che risulteranno essere perfettamente funzionanti verranno integrate nell'applicativo che l'azienda sta sviluppando su richiesta di alcuni clienti.
 
@@ -19,15 +121,10 @@ Le funzionalità a cui l'azienda è interessata sono le seguenti:
 
 Essendo tale applicazione un prototipo interno all'azienda non sono richiesti particolari vincoli di efficienza e un'interfaccia grafica accattivante: è stata lasciata libera iniziativa di sviluppare diverse soluzioni con l'obiettivo finale di ottenere un resoconto dettagliato dei risultati ottenuti.
 
-\section{Casi d'uso}
-Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo richiesto.
-Essi hanno un codice identificativo univoco, nella forma:
-\begin{center}
-UC[codice univoco del padre].[codice progressivo di livello]
-\end{center}
-Il codice progressivo di livello può includere diversi livelli di gerarchia separati da un punto.
+\subsection{Casi d'uso}
+Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo \emph{SensorDevice}.
 
-\subsection{Caso d'uso UC1: Scenario principale}
+\subsubsection{Caso d'uso UC1: Scenario principale}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.45]{gfx/useCase/UC1_Scenario_principale.pdf}
@@ -58,7 +155,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha ottenuto informazioni sulle operazioni che l'utente vuole eseguire.
 \end{description}
 
-\subsection{Caso d'uso UC1.1: Lettura barcode}
+\subsubsection{Caso d'uso UC1.1: Lettura barcode}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto l'opzione di lettura di un codice a barre;
@@ -70,7 +167,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha letto il codice e procede con il salvataggio e la visualizzazione dei dati.
 \end{description}
 
-\subsection{Caso d'uso UC1.2: Cattura file multimediale}
+\subsubsection{Caso d'uso UC1.2: Cattura file multimediale}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/useCase/UC1-2_Cattura_file_multimediale.pdf}
@@ -91,7 +188,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema è pronto per la cattura del file multimediale prescelto.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.1: Cattura immagine}
+\subsubsection{Caso d'uso UC1.2.1: Cattura immagine}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/useCase/UC1-2-1_Cattura_immagine.pdf}
@@ -111,7 +208,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema è pronto per la cattura dell'immagine dalla fonte prescelta.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.1.1: Cattura immagine dalla fotocamera del dispositivo}
+\subsubsection{Caso d'uso UC1.2.1.1: Cattura immagine dalla fotocamera del dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla fotocamera del dispositivo;
@@ -123,7 +220,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha catturato una nuova immagine e procede con il salvataggio.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.1.2: Cattura immagine dalla galleria del dispositivo}
+\subsubsection{Caso d'uso UC1.2.1.2: Cattura immagine dalla galleria del dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un'immagine dalla galleria del dispositivo;
@@ -135,7 +232,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha catturato una nuova immagine e procede con il salvataggio.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.2: Cattura video}
+\subsubsection{Caso d'uso UC1.2.2: Cattura video}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un video;
@@ -147,7 +244,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha catturato una nuovo video e procede con il salvataggio.
 \end{description}
 
-\subsection{Caso d'uso UC1.2.3: Cattura audio}
+\subsubsection{Caso d'uso UC1.2.3: Cattura audio}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la cattura di un file audio;
@@ -159,7 +256,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha catturato una nuovo file audio e procede con il salvataggio.
 \end{description}
 
-\subsection{Caso d'uso UC1.3: Recupero informazioni dispositivo}
+\subsubsection{Caso d'uso UC1.3: Recupero informazioni dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto il recupero delle informazione del dispositivo;
@@ -167,7 +264,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha recuperato le informazioni e procede con il salvataggio e la visualizzazione.
 \end{description}
 
-\subsection{Caso d'uso UC1.4: Recupero posizione corrente}
+\subsubsection{Caso d'uso UC1.4: Recupero posizione corrente}
 \begin{description}
 \item[attori:] Utente,
 \item[scopo e descrizione:] L'utente ha scelto il recupero della posizione corrente tramite il \ac{GPS} del dispositivo;
@@ -175,7 +272,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha recuperato la posizione del dispositivo e procede con il salvataggio e la visualizzazione.
 \end{description}
 
-\subsection{Caso d'uso UC1.5: Lettura contatti dispositivo}
+\subsubsection{Caso d'uso UC1.5: Lettura contatti dispositivo}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto la lettura dei contatti dal dispositivo;
@@ -183,7 +280,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha recuperato i contatti del dispositivo e procede con il salvataggio e la visualizzazione.
 \end{description}
 
-\subsection{Caso d'uso UC1.6: Gestione informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6: Gestione informazioni personali utente}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/useCase/UC1-6_Gestione_informazioni_personali_utente.pdf}
@@ -206,7 +303,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema è pronto ad eseguire l'opzione scelta dell'utente;
 \end{description}
 
-\subsection{Caso d'uso UC1.6.1: Compilazione informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6.1: Compilazione informazioni personali utente}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di compilare le informazioni personali;
@@ -214,7 +311,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha scritto le informazioni immesse dall'utente.
 \end{description}
 
-\subsection{Caso d'uso UC1.6.2: Salvataggio informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6.2: Salvataggio informazioni personali utente}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di salvare le informazioni personali immesse;
@@ -222,7 +319,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha salvato le informazioni immesse dall'utente.
 \end{description}
 
-\subsection{Caso d'uso UC1.6.3: Eliminazione informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6.3: Eliminazione informazioni personali utente}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di eliminare le informazioni salvate;
@@ -230,7 +327,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha eliminato le informazioni dell'utente.
 \end{description}
 
-\subsection{Caso d'uso UC1.6.4: Backup informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6.4: Backup informazioni personali utente}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di effettuare un backup delle informazioni salvate;
@@ -238,7 +335,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha effettuato il backup delle informazioni sulla memoria del dispositivo.
 \end{description}
 
-\subsection{Caso d'uso UC1.6.5: Ripristino informazioni personali utente}
+\subsubsection{Caso d'uso UC1.6.5: Ripristino informazioni personali utente}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di ripristinare le informazioni di cui ha effettuato una copia di backup;
@@ -246,7 +343,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema a ripristinato le informazioni dell'utente.
 \end{description}
 
-\subsection{Caso d'uso UC1.7: Consultazione galleria immagini}
+\subsubsection{Caso d'uso UC1.7: Consultazione galleria immagini}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di consultare la galleria delle immagini;
@@ -254,7 +351,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha visualizzato la galleria delle immagini.
 \end{description}
 
-\subsection{Caso d'uso UC1.8: Consultazione libreria audio/video}
+\subsubsection{Caso d'uso UC1.8: Consultazione libreria audio/video}
 \begin{description}
 \item[attori:] Utente;
 \item[scopo e descrizione:] L'utente ha scelto di consultare la libreria audio/video;
@@ -262,7 +359,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha visualizzato la libreria audio/video.
 \end{description}
 
-\subsection{Caso d'uso UC1.9: Visualizzazione dato acquisito}
+\subsubsection{Caso d'uso UC1.9: Visualizzazione dato acquisito}
 \begin{description}
 \item[attori:] Sistema;
 \item[scopo e descrizione:] Il sistema visualizza il dato acquisito;
@@ -270,7 +367,7 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \item[postcondizione:] Il sistema ha visualizzato il dato acquisito.
 \end{description}
 
-\subsection{Caso d'uso UC1.10: Salvataggio dato acquisito}
+\subsubsection{Caso d'uso UC1.10: Salvataggio dato acquisito}
 \begin{description}
 \item[attori:] Sistema;
 \item[scopo e descrizione:] Il sistema salva il dato acquisito;
@@ -279,13 +376,8 @@ Il codice progressivo di livello può includere diversi livelli di gerarchia sep
 \end{description}
 
 \newpage
-\section{Requisiti}
-Di seguito vengono riportati i requisiti individuati dall'analisi effettuata sulle richieste dell'azienda, emersi dai casi d'uso o nati da esigenze interne.
+\subsection{Requisiti}
 
-Sono classificati per tipo e importanza secondo la seguente codifica:
-\begin{center}
-R[importanza][tipo][codice]
-\end{center}
 
 \begin{description}
 \item[importanza:] \hfill 
@@ -305,11 +397,11 @@ R[importanza][tipo][codice]
 \item[codice:] è il codice univoco di ogni requisito espresso in modo gerarchico.
 \end{description}
 
-\subsection{Requisiti funzionali}
+\subsubsection{Requisiti funzionali}
 Di seguito viene riportata la tabella che esprime i requisiti funzionali.
 \input{Chapters/Tabelle/funzionali}
 
-\subsection{Requisiti di vincolo}
+\subsubsection{Requisiti di vincolo}
 Di seguito viene riportata la tabella che esprime i requisiti di vincolo.
 \input{Chapters/Tabelle/vincolo}
 
@@ -317,6 +409,6 @@ Di seguito viene riportata la tabella che esprime i requisiti di vincolo.
 %Di seguito viene riportata la tabella che esprime i requisiti prestazionali.
 %\input{Chapters/Tabelle/prestazionali}
 
-\subsection{Requisiti di qualità}
+\subsubsection{Requisiti di qualità}
 Di seguito viene riportata la tabella che esprime i requisiti di qualità.
 \input{Chapters/Tabelle/qualita}
