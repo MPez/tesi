@@ -1,95 +1,87 @@
 %**************************************
 %    tabella requisiti funzionali
 %**************************************
+\rowcolors{1}{lightCyan}{paleTurquoise}
 \begin{longtable}{lp{0.65\textwidth}l}
+\hiderowcolors
 \caption{Tabella dei requisiti funzionali - SensorDevice}
 \label{tab:requsiti funzionali} \\
 %intestazione iniziale
-\toprule
+\toprule \hiderowcolors
 Codice & Descrizione & Fonte \\
 \midrule
 \endfirsthead
 %intestazione normale
+\hiderowcolors
 \multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
-\toprule
+\toprule \hiderowcolors
 Codice & Descrizione & Fonte \\
 \midrule
 \endhead
 %piede normale
-\midrule
+\midrule \hiderowcolors
 \multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
 \endfoot
 %piede finale
-\bottomrule
+\bottomrule \hiderowcolors
 \multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
 \endlastfoot
 %corpo della tabella
+\showrowcolors
 R1F1
 & L'utente deve poter scegliere l'opzione di lettura barcode
-& UC1.1 \\[5mm]
-\multirow{6}*{R1F2}
-& \multirow{6}*{\parbox{0.6\textwidth}{L'utente deve poter scegliere l'opzione di cattura di un file multimediale}}
+& UC1.1 \\
+R1F2
+& L'utente deve poter scegliere l'opzione di cattura di un file multimediale
 & UC1.2 \\
-& & UC1.2.1 \\
-& & UC1.2.1.1 \\
-& & UC1.2.1.2 \\
-& & UC1.2.2 \\
-& & UC1.2.3 \\[5mm]
-\multirow{3}*{R1F2.1}
-& \multirow{3}*{\parbox{0.6\textwidth}{L'utente deve poter scegliere l'opzione di cattura di un'immagine}}
+R1F2.1
+& L'utente deve poter scegliere l'opzione di cattura di un'immagine
 & UC1.2.1 \\
-& & UC1.2.1.1 \\
-& & UC1.2.1.2 \\[5mm]
 R1F2.2
 & L'utente deve poter scegliere l'opzione di cattura di un video
-& UC1.2.2 \\[7mm]
+& UC1.2.2 \\
 R1F2.3
 & L'utente deve poter scegliere l'opzione di cattura di un file audio
-& UC1.2.3 \\[7mm]
+& UC1.2.3 \\
 R1F3
 & L'utente deve poter scegliere l'opzione di recupero delle informazioni del dispositivo
-& UC1.3 \\[7mm]
+& UC1.3 \\
 R1F4
 & L'utente deve poter scegliere l'opzione di recupero della posizione corrente
-& UC1.4 \\[7mm]
+& UC1.4 \\
 R1F5
 & L'utente deve poter scegliere l'opzione di lettura dei contatti del dispositivo
-& UC1.5 \\[5mm]
-\multirow{6}*{R1F6}
-& \multirow{6}*{\parbox{0.6\textwidth}{L'utente deve poter scegliere l'opzione di gestione delle informazioni personali}}
+& UC1.5 \\
+R1F6
+& L'utente deve poter scegliere l'opzione di gestione delle informazioni personali
 & UC1.6 \\
-& & UC1.6.1 \\
-& & UC1.6.2 \\
-& & UC1.6.3 \\
-& & UC1.6.4 \\
-& & UC1.6.5 \\[5mm]
 R1F6.1
 & L'utente deve poter scegliere di compilare le informazioni personali
-& UC1.6.1 \\[7mm]
+& UC1.6.1 \\
 R1F6.2
 & L'utente deve poter scegliere di salvare le informazioni personali
-& UC1.6.2 \\[7mm]
+& UC1.6.2 \\
 R1F6.3
 & L'utente deve poter scegliere di eliminare le informazioni personali
-& UC1.6.3 \\[7mm]
+& UC1.6.3 \\
 R1F6.4
 & L'utente deve poter scegliere di effettuare il backup delle informazioni personali
-& UC1.6.4 \\[7mm]
+& UC1.6.4 \\
 R1F6.5
 & L'utente deve poter scegliere di effettuare il ripristino delle informazioni personali
-& UC1.6.5 \\[7mm]
+& UC1.6.5 \\
 R1F7
 & L'utente deve poter scegliere di consultare la galleria immagini
-& UC1.7 \\[7mm]
+& UC1.7 \\
 R1F8
 & L'utente deve poter scegliere di consultare la libreria audio/video
-& UC1.8 \\[7mm]
+& UC1.8 \\
 R1F9
 & Il sistema deve visualizzare i dati non appena vengono acquisiti
-& UC1.9 \\[7mm]
+& UC1.9 \\
 R1F10
 & Il sistema deve salvare i dati non appena vengono acquisiti
-& UC1.10 \\[7mm]
+& UC1.10 \\
 R0F11
 & L'applicazione deve fornire un'interfaccia utente grafica
 & Capitolato \\

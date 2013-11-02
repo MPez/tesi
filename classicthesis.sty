@@ -183,11 +183,13 @@
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
-%\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
-%\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
-%\definecolor{Black}{cmyk}{0, 0, 0, 0}
+\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+\definecolor{Black}{cmyk}{0, 0, 0, 0}
 
 \definecolor{redUni}{RGB}{155,0,20}
+\definecolor{lightCyan}{RGB}{224,255,255}
+\definecolor{paleTurquoise}{RGB}{175,238,238}
 
 % ********************************************************************
 % Font Stuff
@@ -333,7 +335,7 @@
                                         Make sure your pdftex is version 1.40 or higher.}%
             \microtypesetup{expansion=false}%
             \DeclareRobustCommand{\spacedallcaps}[1]{\textls[160]{\MakeTextUppercase{#1}}}%
-            \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textls[80]{\scshape\MakeTextLowercase{#1}}}%
+            \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textls[80]{\scshape{#1}}}%
         }{%
             \RequirePackage{soul} % for letterspacing 
                 \sodef\allcapsspacing{\upshape}{0.15em}{0.65em}{0.6em}%
@@ -387,18 +389,18 @@
     {% lines above and below, number right
     \titleformat{\chapter}[display]%             
         {\relax}{\raggedleft{\color{halfgray}\chapterNumber\thechapter} \\ }{0pt}%
-        {\titlerule\vspace*{.9\baselineskip}\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
+        {\titlerule\vspace*{.9\baselineskip}\raggedright\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]%
     }{% something like Bringhurst  
     \titleformat{\chapter}[display]%
         {\relax}{\mbox{}\oldmarginpar{\vspace*{-3\baselineskip}\color{halfgray}\chapterNumber\thechapter}}{0pt}%
-        {\raggedright\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]% 
+        {\raggedright\Large\spacedallcaps}[\normalsize\vspace*{.8\baselineskip}\titlerule]% 
     }
     % sections \FloatBarrier
     \titleformat{\section}
         {\relax}{\textsc{\MakeTextLowercase{\thesection}}}{1em}{\Large\spacedlowsmallcaps}
     % subsections
     \titleformat{\subsection}
-        {\relax}{\textsc{\MakeTextLowercase{\thesubsection}}}{1em}{\large\itshape}
+        {\relax}{\textsc{\MakeTextLowercase{\thesubsection}}}{1em}{\Large\itshape}
     % subsubsections
     \titleformat{\subsubsection}
         {\relax}{\textsc{\MakeTextLowercase{\thesubsubsection}}}{1em}{\large\itshape}        

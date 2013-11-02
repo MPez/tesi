@@ -1,29 +1,33 @@
 %**************************************
 %    tabella requisiti di qualità
 %**************************************
+\rowcolors{1}{lightCyan}{paleTurquoise}
 \begin{longtable}{lp{0.65\textwidth}l}
-\caption{Tabella dei requisiti di qualità}
+\hiderowcolors
+\caption{Tabella dei requisiti di qualità - SensorDevice}
 \label{tab:requsiti qualità} \\
 %intestazione iniziale
-\toprule
+\toprule \hiderowcolors
 Codice & Descrizione & Fonte \\
 \midrule
 \endfirsthead
 %intestazione normale
+\hiderowcolors
 \multicolumn{3}{l}{\footnotesize\itshape Continua dalla pagina precedente}\\
-\toprule
+\toprule \hiderowcolors
 Codice & Descrizione & Fonte \\
 \midrule
 \endhead
 %piede normale
-\midrule
+\midrule \hiderowcolors
 \multicolumn{3}{r}{\footnotesize\itshape Continua nella prossima pagina}\\
 \endfoot
 %piede finale
-\bottomrule
+\bottomrule %\hiderowcolors
 %\multicolumn{3}{r}{\footnotesize\itshape Si conclude dalla pagina precedente}\\
 \endlastfoot
 %corpo della tabella
+\showrowcolors
 R0Q1 & Deve essere prodotta la documentazione del codice sorgente dell'applicazione 	& Capitolato \\[7mm]
 R0Q2 & Deve essere prodotto un resoconto dettagliato delle funzionalità implementate	& Capitolato \\
 \end{longtable}
