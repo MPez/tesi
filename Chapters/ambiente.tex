@@ -31,9 +31,9 @@ Il sistema operativo di riferimento all'interno dell'azienda è \emph{Microsoft 
 \item[versioni:] 2.2.1 e 2.2.3
 \end{description}
 
-Sencha Touch è un framework JavaScript che consente di sviluppare web application per dispositivi mobili sfruttando tecnologie web standard come \acs{HTML5} e \acs{CSS3}; l'obiettivo che ha è quello di riprodurre il look and feel delle applicazioni native per i diversi sistemi operativi mobili e generare applicazioni multi-piattaforma, consentendo ad uno sviluppatore di scrivere una sola volta il codice per poi compilarlo per ogni piattaforma desiderata.
+\emph{Sencha Touch} è un framework JavaScript che consente di sviluppare web application per dispositivi mobili sfruttando tecnologie web standard come \acs{HTML5} e \acs{CSS3}; l'obiettivo che ha è quello di riprodurre il look and feel delle applicazioni native per i diversi sistemi operativi mobili e generare applicazioni multi-piattaforma, consentendo ad uno sviluppatore di scrivere una sola volta il codice per poi compilarlo per ogni piattaforma desiderata.
 
-Attualmente Sencha Touch supporta i sgeuenti sistemi operativi:
+Attualmente \emph{Sencha Touch} supporta i sgeuenti sistemi operativi:
 \begin{itemize}
 \item Android
 \item iOS
@@ -44,9 +44,9 @@ Attualmente Sencha Touch supporta i sgeuenti sistemi operativi:
 \item[versioni:] 3.1.2 e 4.0.0
 \end{description}
 
-È un tool a riga di comando che fornisce diverse azioni automatizzate durante tutto il ciclo di vita delle applicazioni, dalla generazione di un nuovo progetto con la relativa struttura di cartelle e file principali, all'aggiunta di modelli e controller, fino alla compilazione e al deployment.
+\emph{Sencha Cmd} è un tool a riga di comando che fornisce diverse azioni automatizzate durante tutto il ciclo di vita delle applicazioni, dalla generazione di un nuovo progetto con la relativa struttura di cartelle e file principali, all'aggiunta di modelli e controller, fino alla compilazione e al deployment.
 
-Esso viene utilizzato congiuntamente a Sencha Touch e nella versione più recente consente l'utilizzo di Apache Cordova per aggiungere importanti caratteristiche alle applicazioni.
+Esso viene utilizzato congiuntamente a \emph{Sencha Touch} e nella versione più recente consente l'utilizzo di \emph{Apache Cordova} per aggiungere importanti caratteristiche alle applicazioni.
  
 \section{Apache Cordova - Adobe PhoneGap}
 \begin{figure}[htb]
@@ -60,9 +60,9 @@ Esso viene utilizzato congiuntamente a Sencha Touch e nella versione più recent
 \item[versioni:] 3.0.0 e 3.1.0
 \end{description}
 
-Apache Cordova è una piattaforma di sviluppo per applicazioni native per dispositivi mobili che usa gli standard web \acs{HTML5}, \acs{CSS3} e JavaScript.
+\emph{Apache Cordova} è una piattaforma di sviluppo per applicazioni native per dispositivi mobili che usa gli standard web \acs{HTML5}, \acs{CSS3} e JavaScript.
 
-Fornisce un set di \ac{API} che permette ad uno sviluppatore di accedere alle funzionalità native dei device come la fotocamera o l'accelerometro tramite l'utilizzo di JavaScript; combinato con Sencha Touch consente la creazione di applicazioni native per diversi sistemi operativi.
+Fornisce un set di \ac{API} che permette ad uno sviluppatore di accedere alle funzionalità native dei device come la fotocamera o l'accelerometro tramite l'utilizzo di JavaScript; non fornisce però nessuna libreria grafica che consenta di creare \ac{GUI} ma combinato con Sencha Touch consente la creazione di applicazioni native multi-piattaforma con un look and feel accattivante.
 
 Attualmente supporta i seguenti sistemi operativi:
 \begin{itemize}
@@ -82,9 +82,9 @@ Attualmente supporta i seguenti sistemi operativi:
 \label{fig: logo phonegap}
 \end{figure}
 
-PhoneGap è il progetto originario del framework il cui codice è stato donato ad \ac{ASF} con lo scopo di rendere lo sviluppo e la manutenzione più trasparenti e di rendere più agevoli i contributi da parte di altre organizzazioni.
+\emph{PhoneGap} è il progetto originario del framework il cui codice è stato donato ad \ac{ASF} con lo scopo di rendere lo sviluppo e la manutenzione più trasparenti e di rendere più agevoli i contributi da parte di altre organizzazioni.
 
-Ad oggi esso può essere considerato come una distribuzione di Cordova, dal quale eredita le \ac{API} ma al quale aggiunge alcuni importanti caratteristiche; la più rilevante è il sistema \emph{PhoneGap Build} il quale consente di compilare remotamente il codice della propria applicazione per le seguenti piattaforme:
+Ad oggi esso può essere considerato come una distribuzione di \emph{Cordova}, dal quale eredita le \ac{API} ma al quale aggiunge alcuni importanti caratteristiche; la più rilevante è il sistema \emph{PhoneGap Build} \cite{adobe:phonegapBuild} il quale consente di compilare remotamente il codice della propria applicazione per le seguenti piattaforme:
 \begin{itemize}
 \item Android
 \item iOS
@@ -95,27 +95,35 @@ Ad oggi esso può essere considerato come una distribuzione di Cordova, dal qual
 \end{itemize}
 
 La compilazione remota consente ad uno sviluppatore di ottenere una build della propria applicazione per ogni piattaforma disponibile senza la necessità di possedere sistemi operativi e \ac{SDK} dedicati.
+Questo servizio può essere utilizzato in tre modi diversi:
+\begin{itemize}
+\item Caricando il progetto da compilare direttamente nel sito dedicato;
+\item Creando un link tra l'account \emph{GitHub} e l'account di \emph{PhoneGap Build};
+\item Creando un link tra la \emph{PhoneGap \ac{CLI}} e l'account di \emph{PhoneGap Build}.
+\end{itemize}
+
+La possibilità di ottenere applicazioni funzionanti per ogni sistema operativo mobile disponibile è però vincolata dal possesso delle chiavi e delle licenze necessarie fornite dai vari produttori.
 
 \subsubsection{Apache Cordova CLI - Adobe PhoneGap CLI}
-La Cordova \ac{CLI} è uno strumento a riga di comando che consente la creazione di un progetto con la relativa struttura di cartelle e file, la compilazione per le diverse piattaforme e l'esecuzione tramite un emulatore.
+La \emph{Cordova \ac{CLI}} è uno strumento a riga di comando che consente la creazione di un progetto con la relativa struttura di cartelle e file, la compilazione per le diverse piattaforme e l'esecuzione tramite un emulatore.
 
 Affinché tale tool sia in grado di eseguire il processo di build per la piattaforma desiderata è necessario aver installato sul proprio sistema il \ac{SDK} appropriato, il che richiede anche un sistema operativo specifico.
 
-Quest'ultima considerazione non è valida per il sistema di build di PhoneGap, in quanto consente di richiamare dalla \ac{CLI} un tool di compilazione remota, previa registrazione al servizio cloud\footnote{\url{https://build.phonegap.com/}}.
+Quest'ultima considerazione non è valida per il sistema di build di \emph{PhoneGap}, in quanto consente di richiamare dalla \ac{CLI} un tool di compilazione remota, previa registrazione al servizio cloud nel sito dedicato.
 
 \section{Sencha Architect}
 \begin{description}
 \item[versioni: 2.2.2 e 2.2.3]
 \end{description}
 
-È lo strumento ufficiale Sencha per la creazione di interfacce grafiche sfruttando le \ac{API} di Sencha Touch oppure di Ext JS\footnote{Framework JavaScript per lo  sviluppo di desktop web application.}.
+\emph{Sencha Architect} è lo strumento ufficiale \emph{Sencha} per la creazione di interfacce grafiche sfruttando le \ac{API} di \emph{Sencha Touch} oppure di \emph{Ext JS}\footnote{Framework JavaScript per lo  sviluppo di desktop web application.}.
 
 Tale strumento si è dimostrato molto utile nella creazione di interfacce grafiche complesse, velocizzando notevolmente l'aggiunta dei diversi contenitori ed elementi grafici da inserire al loro interno.
 
 Oltre all'interfaccia grafica è inoltre possibile implementare la logica di gestione di un'applicazione in uno o più controller oppure sfruttando singoli handler per ogni evento scatenato.
 
 \section{Android SDK}
-Fornisce le \ac{API} e gli strumenti necessari per sviluppare, testare e compilare applicazioni per Android.
+\emph{Android \ac{SDK}} fornisce le \ac{API} e gli strumenti necessari per sviluppare, testare e compilare applicazioni per Android.
 
 È composto da pacchetti modulari, installabili e aggiornabili separatamente tramite l'apposito manager, tra i quali possiamo trovare:
 \begin{description}
@@ -131,11 +139,11 @@ Fornisce le \ac{API} e gli strumenti necessari per sviluppare, testare e compila
 \item[versione: 4.3.1 Kepler]
 \end{description}
 
-È un \ac{IDE} multi-linguaggio e multi-piattaforma costituito da uno spazio di lavoro di base e da numerosi plugin aggiuntivi, installabili separatamente, che forniscono funzionalità supplementari al sistema.
+\emph{Eclipse} è un \ac{IDE} multi-linguaggio e multi-piattaforma costituito da uno spazio di lavoro di base e da numerosi plugin aggiuntivi, installabili separatamente, che forniscono funzionalità supplementari al sistema.
 
-Il set di base fornisce gli strumenti necessari allo sviluppo di applicazioni Java ma tramite plugin è possibile ampliare i linguaggi supportati: infatti per sviluppare applicazioni Andorid è necessario installare il plugin \ac{ADT} che fornisce una serie di strumenti che aiutano un programmatore nello sviluppo.
+Il set di base fornisce gli strumenti necessari allo sviluppo di applicazioni Java ma tramite plugin è possibile ampliare i linguaggi supportati: infatti per sviluppare applicazioni Android è necessario installare il plugin \ac{ADT} che fornisce una serie di strumenti che aiutano un programmatore nello sviluppo.
 
 \section{JSDuck}
-È uno strumento che permette di generare la documentazione del codice utilizzando i commenti opportunamente strutturati con l'utilizzo di tag appropriati.
+\emph{JSDuck} è uno strumento che permette di generare la documentazione del codice utilizzando i commenti opportunamente strutturati con l'utilizzo di tag appropriati.
 
-Utilizza \emph{Markdown}\footnote{\url{http://daringfireball.net/projects/markdown/}} per convertire il testo dei commenti in codice \ac{HTML} e costruire un documento ipertestuale navigabile offline che contiene, in modo ordinato e facilmente consultabile, tutta la documentazione dell'applicazione.
+Utilizza \emph{Markdown} \cite{daringFireball:markdown} per convertire il testo dei commenti in codice \ac{HTML} e costruire un documento ipertestuale navigabile offline che contiene, in modo ordinato e facilmente consultabile, tutta la documentazione dell'applicazione.

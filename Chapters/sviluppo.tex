@@ -1,11 +1,11 @@
 %************************************************
 \chapter{Sviluppo}\label{ch:sviluppo}
 %************************************************
-Il presente capitolo illustrerà come si è svolto il processo di sviluppo dei prototipi progettati, le problematiche riscontrate e le soluzioni che sono state applicate per risolverle.
+Il presente capitolo illustra come si è svolto il processo di sviluppo dei prototipi progettati, le problematiche riscontrate e le soluzioni che sono state applicate per risolverle.
 
 La formazione iniziale sui framework da utilizzare è stata svolta su numerose e variegate fonti e con l'ausilio del tutor aziendale e di forum di supporto che hanno semplificato tale apprendimento e hanno contribuito a risolvere dubbi e difficoltà di vario genere.
 
-Una lista esaustiva di tali fonti è da ricercarsi nella bibliografia.
+Una lista esaustiva di tali fonti è da ricercarsi nella \hyperref[app:bibliography]{bibliografia}.
 
 \section{MyNotes}
 Lo sviluppo dell'applicazione \emph{MyNotes} ha richiesto uno studio approfondito del modulo \emph{SyncEngine}, tanto per comprenderne il funzionamento quanto per poterne implementarne le funzionalità all'interno dell'applicazione sviluppata.
@@ -20,7 +20,7 @@ Il secondo ha richiesto la progettazione di un sistema ad hoc che utilizza store
 
 Lo studio del \emph{SyncEngine} ha portato alla luce alcuni bug presenti in questo componente che non erano stati risolti dallo sviluppatore che ne ha curato la realizzazione:
 \begin{itemize}
-\item Il codice identificativo del device era cablato nel codice e, quindi, unico per tutte le installazioni dell'applicazione; si sono proposte 2 alternative:
+\item Il codice identificativo del device era cablato nel codice e, quindi, unico per tutte le installazioni dell'applicazione; si sono proposte due alternative:
 	\begin{itemize}
 	\item La creazione di una pagina dedicata alle informazioni del device in uso da compilare al primo avvio e dalla quale creare un ID univoco;
 	\item L'utilizzo di un plugin di Apache Cordova che recupera l'\ac{UUID} proprio del dispositivo;
@@ -37,8 +37,8 @@ Lo studio del \emph{SyncEngine} ha portato alla luce alcuni bug presenti in ques
 \lstinputlisting[language=Java, caption={Metodi di sincronizzazione inseriti in \emph{SyncManager}}, label={lst:metodi sync manager}]{listings/metodi_sincro.java}
 
 \subsection{Sviluppo interfaccia grafica}
-Dopo aver compreso l'utilizzo del \emph{SyncEngine} si è iniziato lo sviluppo dell'applicazione seguendo la progettazione effettuata inizialmente.
-Non conoscendo a priori le tecnologie utilizzate si è resa necessaria la consultazione di alcune guide online che trattassero gli argomenti richiesti: Sencha Touch 2.2.1~\cite{sencha:touch221} con particolare attenzione al sistema delle classi, alla gestione automatica di getter e setter, al funzionamento generale del framework all'utilizzo di Sencha Cmd per creare lo scheletro dell'applicazione che si può vedere in figura \ref{fig:struttura app sencha touch}.
+Dopo aver compreso l'utilizzo del \emph{SyncEngine} si è iniziato lo sviluppo dell'applicazione seguendo la progettazione effettuata precedentemente.
+Non conoscendo a priori le tecnologie utilizzate si è resa necessaria la consultazione di alcune guide online che trattassero gli argomenti richiesti: \emph{Sencha Touch 2.2.1}~\cite{sencha:touch221} con particolare attenzione al sistema delle classi, alla gestione automatica di getter e setter, al funzionamento generale del framework e all'utilizzo di \emph{Sencha Cmd} per creare lo scheletro dell'applicazione che si può vedere in figura \ref{fig:struttura app sencha touch}.
 
 \begin{figure}[htb]
 \centering
@@ -52,19 +52,19 @@ La cartella \emph{app} contiene i file sorgente del codice dell'applicativo divi
 I file \emph{app.js} e \emph{index.html} sono i file principali dell'applicazione, il primo contiene la logica di inizializzazione mentre il secondo rappresenta la pagina principale della web app da cui viene caricato il file di inizializzazione.
 
 Si è consultata inoltre una guida \cite{miamicoder:howto} che si è rivelata molto utile per comprendere il funzionamento del framework ed iniziare la stesura del codice.
-Le maggiori difficoltà si sono incontrate nell'utilizzo dei componenti grafici da utilizzare per strutturare la \ac{GUI}: dalla documentazione di Sencha Touch non è stato semplice capire come utilizzare tali componenti in quanto spesso risulta essere frammentaria ed incompleta, si è dovuto quindi procedere per gradi provando diverse soluzioni fino al raggiungimento del risultato desiderato.
+Le maggiori difficoltà si sono incontrate nell'utilizzo dei componenti grafici da utilizzare per strutturare la \ac{GUI}: dalla documentazione di \emph{Sencha Touch} non è stato semplice capire come utilizzare tali componenti in quanto spesso risulta essere frammentaria ed incompleta, si è dovuto quindi procedere per gradi provando diverse soluzioni fino al raggiungimento del risultato desiderato.
 
 \subsection{Integrazione SyncEngine}
-Una volta realizzata l'interfaccia grafica è stato il momento di integrare il \emph{SyncEngine} nel prototipo: tale componente deve essere utilizzato come libreria esterna e, in questo caso, Sencha touch prevede l'utilizzo dei \emph{package}: questi sono dei moduli esterni che devono essere compilati in modo autonomo tramite un comando apposito e possono, in seguito, essere distribuiti senza rilasciare obbligatoriamente il codice sorgente.
+Una volta realizzata l'interfaccia grafica è stato il momento di integrare il \emph{SyncEngine} nel prototipo: tale componente deve essere utilizzato come libreria esterna e, in questo caso, \emph{Sencha Touch} prevede l'utilizzo dei \emph{package}: questi sono dei moduli esterni che devono essere compilati in modo autonomo tramite un comando apposito e possono, in seguito, essere distribuiti senza rilasciare obbligatoriamente il codice sorgente.
 
-Il modulo in questione non era stato preparato per tale scopo e si è quindi dovuto procedere ad effettuare la build di tale sistema: purtroppo è stato impossibile ottenere un prodotto utilizzabile nonostante i numerosi tentavi e la richiesta di aiuto al forum ufficiale Sencha\footnote{\url{http://tinyurl.com/lgnme4w}}, dove inizialmente si è ricevuto supporto, ma dopo alcuni scambi di messaggi non si è giunti ad una soluzione.
+Il modulo in questione non era stato preparato per tale scopo e si è quindi dovuto procedere ad effettuare la build di tale sistema: purtroppo è stato impossibile ottenere un prodotto utilizzabile nonostante i numerosi tentavi e la richiesta di aiuto al forum ufficiale Sencha \cite{sencha:buildingpackage}, dove inizialmente si è ricevuto supporto, ma, dopo alcuni scambi di messaggi, non si è giunti ad una soluzione.
 
 Di fatto non è stato possibile integrare il \emph{SyncEngine} nel prototipo sviluppato utilizzando il sistema di build fornito da Sencha attraverso lo strumento \emph{Sencha Cmd}.
 
 \subsection{Utilizzo Apache Cordova}
 Giunti ad una situazione di stallo si è scelto di utilizzare Apache Cordova per completare la realizzazione di \emph{MyNotes}.
 
-Dopo uno studio iniziale sul funzionamento del framework \cite{apache:cordova} e la lettura di diversi articoli pubblicati in internet \cite{andidog:packageSenchaPhonegap} \cite{sencha:senchaMVCphonegap} \cite{bgmemo:senchaPhonegap} per apprendere la tecnica per integrare il funzionamento di Sencha Touch con Cordova, si è riusciti nell'intento riuscendo ad ottenere un file \ac{APK} pronto per essere installato in qualsiasi device Android.
+Dopo uno studio iniziale sul funzionamento del framework \cite{apache:cordova} e la lettura di diversi articoli pubblicati in internet \cite{andidog:packageSenchaPhonegap} \cite{sencha:senchaMVCphonegap} \cite{bgmemo:senchaPhonegap} per apprendere la tecnica per integrare il funzionamento di \emph{Sencha Touch} con \emph{Cordova}, si è riusciti nell'intento riuscendo ad ottenere un file \ac{APK} pronto per essere installato in qualsiasi device Android.
 Il risultato è visibile in figura \ref{fig:screenshot mynotes}.
 
 \begin{figure}[htb]
@@ -117,7 +117,7 @@ Il vantaggio nell'utilizzo di \emph{Cordova} risiede nella disponibilità di num
 Grazie a tale caratteristica è stato semplice utilizzare le \ac{API} del framework per sviluppare i componenti previsti; la documentazione si è rivelata precisa ed affidabile e il tool a riga di comando ha completato con successo ogni tentativo di compilazione.
 
 \subsection{Integrazione MyNotes}
-L'ultimo passo per rendere completa l'applicazione è stato quello di integrare l'applicazione \emph{MyNotes} in una pagina di \emph{SensorDevice} in modo da fornire all'azienda una sola applicazione contenente tutto il lavoro svolto e che rendesse visibili tutte le funzionalità utilizzabili con l'utilizzo congiunto dei 2 framework utilizzati.
+L'ultimo passo per rendere completa l'applicazione è stato quello di integrare l'applicazione \emph{MyNotes} in una pagina di \emph{SensorDevice} in modo da fornire all'azienda una sola applicazione contenente tutto il lavoro svolto e che rendesse visibili tutte le funzionalità utilizzabili con l'utilizzo congiunto dei due framework utilizzati.
 
 In figura \ref{fig:screenshot mynotes sensordevice} si può vedere la pagina relativa a \emph{MyNotes} all'interno di \emph{SensorDevice}; l'applicazione ha subito un naturale restyling dovuto alla diversa struttura grafica delle pagine ed è stata aggiunta la possibilità di salvare le note presenti sulla memoria del dispositivo.
 
@@ -129,11 +129,11 @@ In figura \ref{fig:screenshot mynotes sensordevice} si può vedere la pagina rel
 \end{figure}
 
 \section{ArchitectApp}
-Con l'uscita di \emph{Sencha Touch 2.3} e dopo aver concluso positivamente i 2 prototipi, è stato effettuato uno studio sulle nuove caratteristiche offerte dal nuovo framework: in esso infatti sono stati aggiunte delle classi \emph{wrapper} alle \ac{API} di \emph{Cordova} rendendo ancora più semplice il lavoro dello sviluppatore.
+Con l'uscita di \emph{Sencha Touch 2.3} \cite{sencha:touch23} e dopo aver concluso positivamente i due prototipi, è stato effettuato uno studio sulle nuove caratteristiche offerte dal nuovo framework: in esso infatti sono stati aggiunte delle classi \emph{wrapper} alle \ac{API} di \emph{Cordova} rendendo ancora più semplice il lavoro dello sviluppatore.
 
 Inoltre, è stato migliorato il tool di compilazione \emph{Sencha Cmd} che automaticamente richiama \emph{Cordova \ac{CLI}} per effettuare la build del sistema creando i file necessari per l'installazione sui dispositivi mobili.
 
-Per provare questa nuova versione si è deciso di utilizzare \emph{Sencha Architect}, strumento \emph{drag-and-drop} per la creazione di interfacce grafiche e di sfruttare l'incremento di velocità nello sviluppo per realizzare una nuova versione di \emph{SensorDevice}.
+Per provare questa nuova versione si è deciso di utilizzare \emph{Sencha Architect} \cite{sencha:architect}, strumento \emph{drag-and-drop} per la creazione di interfacce grafiche e di sfruttare l'incremento di velocità nello sviluppo per realizzare una nuova versione di \emph{SensorDevice}.
 
 Si è iniziando a creare un interfaccia ad hoc per tablet, divisa in due zone, una riservata al menu e l'altra studiata per ospitare i componenti utilizzati per visualizzare le funzionalità presenti all'utente.
 

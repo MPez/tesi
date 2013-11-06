@@ -554,7 +554,7 @@ Di seguito viene riportata la tabella che esprime i requisiti di qualità.
 
 \section{SensorDevice}
 \subsection{Descrizione generale}
-L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti (Sencha Touch e Cordova)per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo funzionante su piattaforma Android e iOS.
+L'obiettivo dell'azienda è studiare le possibili implementazioni delle librerie esistenti (\emph{Sencha Touch} e \emph{Apache Cordova}) per l'utilizzo dei sensori presenti nei device mobili con lo scopo di integrare tali caratteristiche in un prototipo dimostrativo funzionante su piattaforma Android e iOS.
 Le funzionalità che risulteranno essere perfettamente funzionanti verranno integrate nell'applicativo che l'azienda sta sviluppando su richiesta di alcuni clienti.
 
 Le funzionalità a cui l'azienda è interessata sono le seguenti:
@@ -563,7 +563,7 @@ Le funzionalità a cui l'azienda è interessata sono le seguenti:
 \item Cattura immagini, video, registrazioni audio;
 \item Lettura elenco contatti del dispositivo in uso;
 \item Recupero informazioni proprie del dispositivo;
-\item Backup e ripristino dei dati dell'applicazione sulla memoria di massa del dispositivo tramite un database \emph{SQLite}\footnote{\url{http://www.sqlite.org/}};
+\item Backup e ripristino dei dati dell'applicazione sulla memoria di massa del dispositivo tramite un database \emph{SQLite} \cite{hipp:sqlite};
 \item Geolocalizzazione.
 \end{itemize}
 
@@ -582,14 +582,14 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 
 \begin{description}
 \item[attori:] Utente;
-\item[scopo e descrizione:] L'utente ha avviato correttamente l'applicazione e questa è pronta all'uso. Egli può effettuare varie operazioni: leggere codici a barre, recuperare i contatti del dispositivo, recuperare le informazioni del dispositivo, catturare file multimediali, recuperare la posizione corrente dal \ac{GPS}, gestire le proprie informazioni personali, consultare la galleria immagini e la libreria audio/video, salvare e visualizzare i dati catturati tramite il dispositivo;
+\item[scopo e descrizione:] L'utente ha avviato correttamente l'applicazione e questa è pronta all'uso. Egli può effettuare varie operazioni: leggere codici a barre, recuperare i contatti del dispositivo, recuperare le informazioni del dispositivo, catturare dati multimediali, recuperare la posizione corrente dal \ac{GPS}, gestire le proprie informazioni personali, consultare la galleria immagini e la libreria audio/video; il sistema provvederà a salvare correttamente tutte le informazioni acquisite e a renderle disponibili alla consultazione;
 \item[precondizione:] L'applicazione è stata avviata ed è pronta all'uso.
 \item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
 	\item L'utente può leggere codici a barre;
 	\item L'utente può recuperare i contatti del dispositivo;
 	\item L'utente può recuperare le informazioni del dispositivo;
-	\item L'utente può catturare file multimediali;
+	\item L'utente può catturare dati multimediali;
 	\item L'utente può recuperare la posizione corrente;
 	\item L'utente può gestire le proprie informazioni personali;
 	\item L'utente può consultare la galleria;
@@ -625,7 +625,7 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 
 \begin{description}
 \item[attori:] Utente;
-\item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di un file multimediale e può decidere quale tipo di file catturare: immagine, audio o video;
+\item[scopo e descrizione:] L'utente ha scelto l'opzione di cattura di dati multimediali e può decidere quale tipo di file catturare: immagine, audio o video;
 \item[precondizione:] Il sistema mostra le possibili scelte all'utente;
 \item[flusso principale degli eventi:] \hfill 
 	\begin{enumerate}
@@ -707,7 +707,7 @@ Vengono ora descritti i casi d'uso utilizzati per la progettazione del prototipo
 \subsubsection{Caso d'uso UC1.3: Recupero informazioni dispositivo}
 \begin{description}
 \item[attori:] Utente;
-\item[scopo e descrizione:] L'utente ha scelto il recupero delle informazione del dispositivo;
+\item[scopo e descrizione:] L'utente ha scelto il recupero delle informazioni proprie del dispositivo;
 \item[precondizione:] Il sistema è pronto per il recupero delle informazioni;
 \item[postcondizione:] Il sistema ha recuperato le informazioni e procede con il salvataggio e la visualizzazione.
 \end{description}
