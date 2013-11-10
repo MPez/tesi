@@ -1,3 +1,360 @@
 %************************************************
 \chapter{Test}\label{ch:test}
 %************************************************
+Il seguente capitolo descrive i test funzionali che sono stati svolti sui prototipi per verificarne il corretto funzionamento e la corrispondenza con i casi d'uso e i requisiti emersi dall'analisi effettuata.
+
+Tali test sono stati eseguiti numerose volte e si sono svolti mantenendo collegato il dispositivo al notebook mediante cavo USB con lo scopo di sfruttare la console di debug fornita da \emph{Eclipse} per monitorare il funzionamento dei prototipi.
+Infatti ad ogni metodo presente nei prototipi degli oggetti sviluppati è stato inserito almeno un comando di output a console per identificare il flusso del programma.
+Questa tecnica ha consentito di individuare alcuni malfunzionamenti e di comprendere meglio gli oggetti ritornati da alcune chiamate di metodi propri dei framework utilizzati, i quali erano documentati in modo carente o erroneo.
+
+I test svolti presentano un codice identificativo composto dal prefisso \emph{T} seguito da un codice numerico progressivo.
+
+\section{MyNotes}
+\subsection{T1 - Visualizzazione note}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente deve vedere una lista delle note esistenti; nel caso che l'applicazione venga avviata per la prima volta, la lista deve risultare vuota.
+\item[requisito verificato]: R0F1, R0F1.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T2 - Creazione nuova nota}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di una nuova nota e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi alla nuova nota;
+	\item L'utente sceglie di salvare la nota e il sistema la salva correttamente e la visualizza nella lista;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.2, R0F1.2.1, R0F1.2.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T3 - Eliminazione nuova nota}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di una nuova nota e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi alla nuova nota;
+	\item L'utente sceglie di eliminare la nuova nota e il sistema chiede conferma di eliminazione;
+	\item L'utente conferma la cancellazione della nota e il sistema elimina la nuova nota;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.2, R0F1.2.1, R0F1.2.3, R0F1.2.4, R0F1.2.4.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T4 - Annullamento eliminazione nuova nota}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di una nuova nota e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi alla nuova nota;
+	\item L'utente sceglie di eliminare la nuova nota e il sistema chiede conferma di eliminazione;
+	\item L'utente annulla la cancellazione della nota e il sistema annulla l'eliminazione;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.2, R0F1.2.1, R0F1.2.3, R0F1.2.4, R0F1.2.4.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T5 - Modifica nota esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona una nota esistente dalla lista e il sistema visualizza la pagina di modifica;
+	\item L'utente effettua le modifiche desiderate;
+	\item L'utente sceglie di salvare le modifiche apportate alla nota e il sistema la salva correttamente e la visualizza nella lista;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.3, R0F1.3.1, R0F1.3.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T6 - Eliminazione nota esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona una nota esistente dalla lista e il sistema visualizza la pagina di modifica;
+	\item L'utente sceglie di eliminare la nota e il sistema chiede conferma di eliminazione;
+	\item L'utente conferma la cancellazione della nota e il sistema elimina la nota esistente;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.3, R0F1.3.3, R0F1.3.4, R0F1.3.4.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T7 - Annullamento eliminazione nota esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di una nota esistente e il sistema visualizza la pagina di modifica;
+	\item L'utente sceglie di eliminare la nota e il sistema chiede conferma di eliminazione;
+	\item L'utente annulla la cancellazione della nota e il sistema annulla l'eliminazione;
+	\end{enumerate}
+\item[requisiti verificati]: R0F1, R0F1.3, R0F1.3.3, R0F1.3.4, R0F1.3.4.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T8 - Visualizzazione autori}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente deve visualizzare la lista degli autori esistenti; nel caso sia il primo avvio dell'applicazione o che non siano stati ancora creati degli autori, la lista deve risultare vuota.
+\item[requisiti verificati]: R0F2, R0F2.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T9 - Creazione nuovo autore}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di un nuovo autore e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi alla nuovo autore;
+	\item L'utente sceglie di salvare l'autore e il sistema lo salva correttamente e lo visualizza nella lista;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.2, R0F2.2.1, R0F2.2.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T10 - Eliminazione nuovo autore}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di un nuova autore e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi al nuovo autore;
+	\item L'utente sceglie di eliminare il nuovo autore e il sistema chiede conferma di eliminazione;
+	\item L'utente conferma la cancellazione dell'autore e il sistema elimina il nuovo autore;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.2, R0F2.2.1, R0F2.2.3, R0F2.2.4, R0F2.2.4.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T11 - Annullamento eliminazione nuovo autore}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di un nuovo autore e il sistema visualizza la pagina di compilazione;
+	\item L'utente compila i campi relativi al nuovo autore;
+	\item L'utente sceglie di eliminare il nuovo autore e il sistema chiede conferma di eliminazione;
+	\item L'utente annulla la cancellazione dell'autore e il sistema annulla l'eliminazione;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.2, R0F2.2.1, R0F2.2.3, R0F2.2.4, R0F2.2.4.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T12 - Modifica autore esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona un autore esistente dalla lista e il sistema visualizza la pagina di modifica;
+	\item L'utente effettua le modifiche desiderate;
+	\item L'utente sceglie di salvare le modifiche apportate all'autore e il sistema lo salva correttamente e lo visualizza nella lista;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.3, R0F2.3.1, R0F2.3.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T13 - Eliminazione autore esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona un autore esistente dalla lista e il sistema visualizza la pagina di modifica;
+	\item L'utente sceglie di eliminare l'autore e il sistema chiede conferma di eliminazione;
+	\item L'utente conferma la cancellazione dell'autore e il sistema elimina l'autore esistente;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.3, R0F2.3.3, R0F2.3.4, R0F2.3.4.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T14 - Annullamento eliminazione autore esistente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{enumerate}
+	\item L'utente seleziona la creazione di un autore esistente e il sistema visualizza la pagina di modifica;
+	\item L'utente sceglie di eliminare l'autore e il sistema chiede conferma di eliminazione;
+	\item L'utente annulla la cancellazione dell'autore e il sistema annulla l'eliminazione;
+	\end{enumerate}
+\item[requisiti verificati]: R0F2, R0F2.3, R0F2.3.3, R0F2.3.4, R0F2.3.4.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T15 - Download dati dal server}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente decide di effettuare il download dei dati presenti nel server; il sistema si collega al server, scarica i dati e li unisce con quelli presenti nel dispositivo.
+Nel caso non siano presenti dati nel server, l'utente non nota nessuna modifica alla lista delle note e degli autori.
+\item[requisiti verificati]: R0F3, R0F3.1
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T16 - Upload dati sul server}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente decide di effettuare l'upload sul server dei dati presenti nel dispositivo; il sistema prepara i dati e li spedisce al server.
+Nel caso non siano presenti dati nel dispositivo, il sistema invia un pacchetto vuoto.
+\item[requisiti verificati]: R0F3, R0F3.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T17 - Gestione informazioni del dispositivo}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente decide di compilare le informazioni del dispositivo, inserendo un nome per il device e una descrizione;
+	\item L'utente sceglie di salvare le informazioni immesse e il sistema le salva correttamente.
+	\end{itemize}
+\item[requisiti verificati]: R0F4, R0F4.1, R0F4.2
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{Tracciamento requisiti - test}
+Di seguito viene riportata la tabella che traccia i singoli requisti dell'applicazione ai test effettuati che li soddisfano.
+\input{Chapters/Tabelle/MyNotes_requisiti-test}
+
+\section{SensorDevice}
+\subsection{T1 - Lettura barcode}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di effettuare la lettura di un codice a barre;
+	\item Il sistema accede alla fotocamera e permette all'utente di inquadrare un codice a barre;
+	\item L'utente inquadra il barcode e il sistema lo legge correttamente, chiude la fotocamera, salva il codice letto e lo visualizza.
+	\end{itemize}
+\item[requisito verificato]: R1F1, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T2 - Scatto fotografia}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di scattare una fotografia;
+	\item Il sistema accede alla fotocamera e permette all'utente di scattare una fotografia;
+	\item L'utente scatta la fotografia e il sistema chiude la fotocamera e salva l'immagine scattata.
+	\end{itemize}
+\item[requisito verificato]: R1F2, R1F2.1, R1F2.1.1, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T3 - Recupero immagine da galleria}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di recuperare un'immagine esistente dalla galleria;
+	\item Il sistema accede alla galleria del dispositivo e permette all'utente di selezionare un immagine;
+	\item L'utente seleziona l'immagine da importare e il sistema chiude la galleria e salva l'immagine selezionata.
+	\end{itemize}
+\item[requisito verificato]: R1F2, R1F2.1, R1F2.1.2, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T4 - Cattura video}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di effettuare la cattura di un video;
+	\item Il sistema accede alla fotocamera e permette all'utente di registrare un video;
+	\item L'utente realizza un video e il sistema chiude la fotocamera e salva il video realizzato.
+	\end{itemize}
+\item[requisito verificato]: R1F2, R1F2.2, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T5 - Cattura audio}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di effettuare la cattura di un file audio;
+	\item Il sistema accede al microfono e permette all'utente di registrare una traccia audio;
+	\item L'utente registra una traccia audio e il sistema chiude il microfono e salva la traccia realizzata.
+	\end{itemize}
+\item[requisito verificato]: R1F2, R1F2.3, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T6 - Recupero informazioni dispositivo}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di recuperare le informazioni proprie del dispositivo;
+	\item Il sistema accede al dispositivo e recupera il modello del dispositivo, il sistema operativo installato e la versione, l'\ac{UUID} e la versione di \emph{Cordova} in uso e li visualizza.
+	\end{itemize}
+\item[requisito verificato]: R1F3, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T7 - Recupero posizione corrente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di recuperare la posizione corrente tramite il \ac{GPS};
+	\item Il sistema accede al ricevitore \ac{GPS} del dispositivo, recupera la posizione corrente, la salva e la visualizza.
+	\end{itemize}
+\item[requisito verificato]: R1F4, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T8 - Recupero contatti rubrica}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di recuperare i contatti della rubrica presenti nel dispositivo;
+	\item Il sistema accede alla rubrica del dispositivo e recupera i contatti presenti, li salva e li visualizza.
+	\end{itemize}
+\item[requisito verificato]: R1F5, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T9 - Salvataggio informazioni personali utente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di compilare le informazioni personali accedendo alla pagina dedicata;
+	\item L'utente decide di salvare le informazioni immesse e il sistema le salva correttamente.
+	\end{itemize}
+\item[requisito verificato]: R1F6, R1F6.1, R1F6.2, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T10 - Eliminazione informazioni personali utente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di eliminare le informazioni personali precedentemente salvate;
+	\item Il sistema elimina le informazioni salvate.
+	\end{itemize}
+\item[requisito verificato]: R1F6, R1F6.3, R1F9, R1F10
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T11 - Backup informazioni personali utente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di effettuare il backup delle informazioni personali salvate sul dispositivo;
+	\item Il sistema effettua il salvataggio sulla memoria di massa del dispositivo in un file di testo denominato \code{backupPersonalInfo.txt} e situato nella cartella \code{SensorDevice}.
+	\end{itemize}
+\item[requisito verificato]: R1F6, R1F6.4
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T12 - Ripristino informazioni personali utente}
+\begin{description}
+\item[descrizione]: \hfill
+	\begin{itemize}
+	\item Dopo aver avviato con successo l'applicazione, l'utente sceglie di effettuare il ripristino delle informazioni personali di cui è stato precedentemente effettuato un backup;
+	\item Il sistema recupera le informazioni dal file \code{/sdcard/SensorDevice/backpPersonalInfo.txt} e le salva nello store dedicata sostituendo quelle presenti.
+	\end{itemize}
+\item[requisito verificato]: R1F6, R1F6.5
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T13 - Consultazione galleria immagini}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente sceglie di consultare la galleria immagini accedendo alla pagina dedicata e il sistema visualizza le immagini presenti; nel caso sia il primo avvio dell'applicazione o non siano presenti immagini la galleria deve risultare vuota.
+\item[requisito verificato]: R1F7
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{T14 - Consultazione libreria audio/video}
+\begin{description}
+\item[descrizione]: Dopo aver avviato con successo l'applicazione, l'utente sceglie di consultare la libreria audio/video accedendo alla pagina dedicata e il sistema visualizza un elenco delle registrazioni audio e video presenti; nel caso sia il primo avvio dell'applicazione o non siano presenti registrazioni la libreria deve risultare vuota.
+\item[requisito verificato]: R1F8
+\item[esito]: \emph{superato}
+\end{description}
+
+\subsection{Tracciamento requisiti - test}
+Di seguito viene riportata la tabella che traccia i singoli requisti dell'applicazione ai test effettuati che li soddisfano.
+\input{Chapters/Tabelle/SensorDevice_requisiti-test}

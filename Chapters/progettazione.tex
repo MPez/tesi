@@ -28,8 +28,7 @@ Il diagramma in figura \ref{fig:architettura Sencha} rappresenta l'architettura 
 \item[controller:] rappresenta il gestore della logica dell'applicazione; esegue il collegamento tra l'azione che l'utente desidera svolgere e i dati effettivi sul quale l'azione deve essere eseguita.
 \end{description}
 
-\section{Descrizione architettura}
-\subsection{MyNotes}
+\section{MyNotes}
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.5,angle=90]{gfx/class/MyNotes.pdf}
@@ -40,7 +39,7 @@ L'architettura generale dell'applicazione \emph{MyNotes} è rappresentata in fig
 
 Dal diagramma si evince come non ci siano gerarchie tra i componenti, ma ogni prototipo rappresenta un'entità particolare con compiti specifici che vengono gestiti dal controller; ognuno di questi oggetti, esclusi il controller e il \emph{SyncManager}, interagisce con al più un altro oggetto, il che rende semplice l'organizzazione dei componenti.
 
-\subsubsection{Model - Store}
+\subsection{Model - Store}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/class/MyNotes_Model_Store.pdf}
@@ -53,7 +52,7 @@ I modelli in questione sono molto semplici e contengono pochi campi in quanto no
 Per autori e note si è scelto di utilizzare il proxy di tipo \emph{sql} il quale usa \emph{SQLite} per il salvataggio dei dati; la scelta è stata obbligata in quanto il \emph{SyncManager} utilizza tale tipo di proxy.
 Per quanto riguarda le informazioni del dispositivo invece è sufficiente un proxy di tipo \emph{localStorage} in quanto non necessita di essere sincronizzato e può essere gestito localmente.
 
-\subsubsection{View}
+\subsection{View}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/class/MyNotes_View.pdf}
@@ -64,7 +63,7 @@ Le viste progettate sono dei componenti che vengono utilizzati per visualizzare 
 
 È presente un ulteriore vista, \emph{DeleteActionSheet}, che ha il compito di richiedere la conferma dell'eliminazione di una nota o di un autore all'utente; tale componente è in grado di distinguere il tipo del dato che l'utente desidera eliminare tramite il parametro \emph{type}.
 
-\subsubsection{Controller}
+\subsection{Controller}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/class/MyNotes_Controller.pdf}
@@ -77,7 +76,7 @@ Esso infatti dispone dei riferimenti a tutte le viste esistenti ed utilizza dei 
 
 Inoltre svolge il suo compito in stretta relazione con il \emph{SyncManager} per quanto riguarda la gestione degli store, infatti, ogni operazione su di essi è mediata da questo componente che svolge la funzione di intermediario con il \emph{SyncEngine} rendendo trasparente allo sviluppatore la gestione dei dati.
 
-\subsubsection{SyncEngine}
+\subsection{SyncEngine}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/class/SyncEngine.pdf}
@@ -88,7 +87,7 @@ Il \emph{SyncEngine} è un componente che permette di creare dinamicamente degli
 
 Per gestire ed utilizzare correttamente questo componente è stata predisposta un'interfaccia denominata \emph{SyncManager} dalla quale è possibile creare gli store necessari e utilizzarli in modo ottimale all'interno dell'applicazione: sarà quindi possibile utilizzarli per leggere e salvare i dati e per effettuare la sincronizzazione con quelli presenti nel server.
 
-\subsection{SensorDevice}
+\section{SensorDevice}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.4,angle=90]{gfx/class/SensorDevice.pdf}
@@ -99,7 +98,7 @@ In figura \ref{fig:architettura SensorDevice} è rappresentata l'architettura ad
 
 Come per \emph{MyNotes} non esistono gerarchie di tipi e il rapporto tra modelli e store è sempre di 1 a 1; si può notare, inoltre, come le viste siano particolarmente articolate a causa della necessità di visualizzare una notevole quantità di dati che vengono raccolti dal sistema.
 
-\subsubsection{Model - Store}
+\subsection{Model - Store}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.4]{gfx/class/SensorDevice_Model_Store.pdf}
@@ -110,7 +109,7 @@ Per soddisfare le richieste dell'azienda sono stati progettati sette modelli div
 
 Ogni modello ha associato uno store con proxy di tipo \emph{localStorage}, tranne \emph{PersonalInfos} che ne possiede uno di tipo \emph{sql}, in quanto, tramite il relativo modello, si intende testare il backup e il ripristino dei dati sulla memoria di massa del dispositivo che verrà effettuato tramite un file di testo.
 
-\subsubsection{View}
+\subsection{View}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.45]{gfx/class/SensorDevice_View.pdf}
@@ -122,7 +121,7 @@ Come si evince dalla figura \ref{fig:architettura SensorDevice View} si è scelt
 Inoltre sono state progettate due pagine dedicate alla visualizzazione di immagini, \emph{Gallery}, e di video e audio, \emph{Library}.
 Si è deciso di dividere le due categorie di \emph{media} in quanto necessitano di una diversa gestione per essere visualizzati o riprodotti.
 
-\subsubsection{Controller}
+\subsection{Controller}
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.6]{gfx/class/SensorDevice_Controller.pdf}

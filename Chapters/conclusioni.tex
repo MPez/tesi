@@ -1,3 +1,56 @@
 %************************************************
 \chapter{Conclusioni}\label{ch:conclusioni}
 %************************************************ 
+\section{Risultati}
+Il progetto di stage ha portato allo sviluppo di due prototipi che soddisfano tutti i requisiti individuati durante l'attività di analisi.
+
+In particolare è stato possibile integrare efficacemente il modulo \emph{SyncEngine} e testarne il corretto funzionamento all'interno della semplice applicazione \emph{MyNotes} di gestione di note ed autori.
+
+Per quanto riguarda l'applicazione \emph{SensorDevice}, la tabella \ref{tab:funzionalità sensordevice} illustra il comportamento dei framework utilizzati con le funzionalità che l'azienda desiderava testare: l'unica soluzione capace di utilizzare tutte le periferiche presenti in un dispositivo mobile è stata \emph{ApacheCordova}, i cui plugin sono risultati essere di facile utilizzo e di immediata comprensione grazie alla bontà della documentazione.
+
+\begin{table}[htb]
+\caption{Resoconto funzionalità testate -- SensorDevice}
+\label{tab:funzionalità sensordevice}
+\centering
+\begin{tabular}{cccc}
+\hiderowcolors
+\toprule
+\multirow{2}*{Funzionalità} & \multicolumn{2}{c}{Sencha Touch} 			& \multirow{2}*{Apache Cordova} \\
+\cmidrule(rl) {2-3} 
+							& 2.2.1 		& 2.3.0						& \\
+\midrule %\showrowcolors
+Barcode						& $\circ$ 		& $\circ$					& $\checkmark$ \\
+Camera						& $\checkmark$ 	& $\checkmark$				& $\checkmark$ \\
+Capture						& $\circ$ 		& $\bullet$					& $\checkmark$ \\
+Connection					& $\checkmark$ 	& $\checkmark$				& $\checkmark$ \\
+Contacts					& $\bullet$ 	& $\checkmark$				& $\checkmark$ \\
+Device						& $\checkmark$ 	& $\checkmark$				& $\checkmark$ \\
+File						 	& $\circ$ 		& $\bullet$					& $\checkmark$ \\
+Geolocation					& $\checkmark$ 	& $\checkmark$ 				& $\checkmark$ \\					
+\bottomrule
+\end{tabular}
+\begin{quotation}\footnotesize
+\item[$\circ$:] funzionalità non presente
+\item[$\bullet$:] funzionalità presente ma non funzionante
+\item[$\checkmark$:] funzionalità funzionante
+\end{quotation}
+\end{table}
+
+\emph{Sencha Touch 2} si è rilevato un'ottima soluzione per realizzare l'interfaccia grafica grazie ai numerosi automatismi del framework e all'architettura \ac{MVC} che semplifica la gestione e la separazione delle diverse unità software, ma è risultata essere ancora carente con l'implementazione di un sistema capace di interagire correttamente con i sensori dei device.
+
+La situazione in proposito è migliorata notevolmente con la distribuzione della versione \emph{2.3} del framework ma l'impressione è che il sistema sia ancora immaturo sotto questo punto di vista e con ampi margini di miglioramento.
+
+Un altro aspetto importante da considerare è l'utilizzo di \emph{Sencha Architect} per la realizzazione di una \ac{GUI}: si è rivelato essere uno strumento essenziale per disegnare velocemente ed efficacemente interfacce complesse, fornendo un aiuto indispensabile allo sviluppatore meno esperto.
+
+Nel complesso l'azienda è rimasta soddisfatta del lavoro svolto, sia per i prototipi realizzati sia per la realizzazione della documentazione completa del codice sorgente di \emph{MyNotes} e di \emph{SensorDevice} ma anche del pacchetto \emph{SyncEngine} dando uniformità e continuità agli stage che li hanno prodotti.
+
+\section{Criticità riscontrate}
+L'analisi dei requisiti e la progettazione delle applicazioni non hanno generato problemi rilevanti, sia per la natura esplorativa dello stage sia per il supporto ricevuto dal tutor aziendale.
+
+Le difficoltà maggiori si sono avute nella corretta interpretazione della documentazione \emph{Sencha} che in molti punti si è rivelata essere molto carente e imprecisa, lasciando ai commenti degli utilizzatori il compito di chiarire dubbi e inesattezze.
+
+Anche la consultazione del forum ufficiale spesso è risultata vana in quanto, davanti alla richieste d'aiuto, gli sviluppatori e i progettisti \emph{Sencha} non sempre riescono a dare soluzioni efficaci, lasciando in sospeso le conversazioni o dando risposte molto vaghe e poco utili nella pratica.
+
+Un'ulteriore problema si è avuto con l'integrazione dei due framework: le guide trovate in internet sono state utili per capire il singolo funzionamento dei framework ma, facendo riferimento a vecchie versioni degli stessi e risultando in alcuni casi anche in contrasto tra loro, sono state poco utili per la soluzione al problema: sono serviti diversi tentativi per comprendere la corretta tecnica e l'arrivo di \emph{Sencha Touch 2.3} ha risolto definitivamente il problema creando degli \emph{adapter} verso le \ac{API} di \emph{Apache Cordova}.
+
+\section{Conoscenze acquisite}
