@@ -2,7 +2,7 @@
 \chapter{Conclusioni}\label{ch:conclusioni}
 %************************************************ 
 \section{Risultati}
-Il progetto di stage ha portato allo sviluppo di due prototipi che soddisfano tutti i requisiti individuati durante l'attività di analisi.
+Il progetto di stage ha prodotto due prototipi che soddisfano tutti i requisiti individuati durante l'attività di analisi; l'azienda era interessata a testare le applicazioni anche su dispositivi basati su \emph{iOS} ma ciò non è stato possibile a causa dei ritardi nell'ottenimento della licenza necessaria per effettuare il processo di build per tale piattaforma.
 
 In particolare è stato possibile integrare efficacemente il modulo \emph{SyncEngine} e testarne il corretto funzionamento all'interno della semplice applicazione \emph{MyNotes} di gestione di note ed autori.
 
@@ -30,13 +30,13 @@ Geolocation					& $\checkmark$ 	& $\checkmark$ 				& $\checkmark$ \\
 \bottomrule
 \end{tabular}
 \begin{quotation}\footnotesize
-\item[$\circ$:] funzionalità non presente
-\item[$\bullet$:] funzionalità presente ma non funzionante
-\item[$\checkmark$:] funzionalità funzionante
+\item[$\circ$:] non presente
+\item[$\bullet$:] presente ma non funzionante
+\item[$\checkmark$:] funzionante
 \end{quotation}
 \end{table}
 
-\emph{Sencha Touch 2} si è rilevato un'ottima soluzione per realizzare l'interfaccia grafica grazie ai numerosi automatismi del framework e all'architettura \ac{MVC} che semplifica la gestione e la separazione delle diverse unità software, ma è risultata essere ancora carente con l'implementazione di un sistema capace di interagire correttamente con i sensori dei device.
+\emph{Sencha Touch 2} si è rilevato un'ottima soluzione per realizzare l'interfaccia grafica grazie ai numerosi automatismi del framework e all'architettura \ac{MVC} che semplifica la gestione e la separazione delle diverse unità software; purtroppo è risultata essere ancora carente con l'implementazione di un sistema capace di interagire correttamente con i sensori dei device.
 
 La situazione in proposito è migliorata notevolmente con la distribuzione della versione \emph{2.3} del framework ma l'impressione è che il sistema sia ancora immaturo sotto questo punto di vista e con ampi margini di miglioramento.
 
@@ -51,6 +51,14 @@ Le difficoltà maggiori si sono avute nella corretta interpretazione della docum
 
 Anche la consultazione del forum ufficiale spesso è risultata vana in quanto, davanti alla richieste d'aiuto, gli sviluppatori e i progettisti \emph{Sencha} non sempre riescono a dare soluzioni efficaci, lasciando in sospeso le conversazioni o dando risposte molto vaghe e poco utili nella pratica.
 
-Un'ulteriore problema si è avuto con l'integrazione dei due framework: le guide trovate in internet sono state utili per capire il singolo funzionamento dei framework ma, facendo riferimento a vecchie versioni degli stessi e risultando in alcuni casi anche in contrasto tra loro, sono state poco utili per la soluzione al problema: sono serviti diversi tentativi per comprendere la corretta tecnica e l'arrivo di \emph{Sencha Touch 2.3} ha risolto definitivamente il problema creando degli \emph{adapter} verso le \ac{API} di \emph{Apache Cordova}.
+Un'ulteriore problema si è avuto con l'integrazione dei due framework: le guide trovate in internet sono state utili per capire il singolo funzionamento dei framework ma, facendo riferimento a vecchie versioni degli stessi e risultando in alcuni casi anche in contrasto tra loro, sono state poco utili per la soluzione al problema: sono serviti diversi tentativi per comprendere la corretta tecnica.
+Solamente l'arrivo di \emph{Sencha Touch 2.3} ha risolto parzialmente il problema creando degli \emph{adapter} verso le \ac{API} di \emph{Apache Cordova}, anche se alcuni di questi, come \emph{Device Capture} e \emph{Device File} presentano dei bug che al tempo dello stage non erano risolti.
 
 \section{Conoscenze acquisite}
+L'attività di stage mi ha dato la possibilità di vivere una realtà lavorativa in un'azienda solida, seguito da personale qualificato, facendomi mettere in pratica, anche se solo per un breve periodo, le conoscenze che ho acquisito attraverso gli studi universitari e dandomi la possibilità di approcciare la programmazione per sistemi mobili cogliendone alcuni pregi e difetti.
+
+Mi ha permesso di studiare \emph{Sencha Touch} e \emph{Apache Cordova}: i due framework si sono rivelati essere due strumenti molto interessanti per lo sviluppo di applicazioni mobile multi-piattaforma; se utilizzati insieme infatti danno la possibilità ad uno sviluppatore di realizzare software che sfrutti in modo ottimale i sensori dei device e allo stesso tempo  di donare alle applicazioni un aspetto grafico gradevole e che può essere reso accattivante e personalizzato con poche modifiche.
+
+Infine ho avuto la possibilità di seguire interamente e in prima persona tutte le attività di realizzazione di un prodotto software, dall'analisi iniziale, passando per la progettazione e concludendo con lo sviluppo e i test, dovendo prendere in modo autonomo e responsabile decisioni importanti che mi consentissero di portare a termine con successo il progetto affidatomi.
+
+Mi ritengo quindi molto soddisfatto dell'esperienza vissuta, in parte grazie all'azienda \myCompany che mi ha dato questa possibilità inserendomi in un ambiente stimolante e professionale, ma soprattutto perché mi ha permesso di confrontarmi con le difficoltà di un progetto reale a cui sono riuscito a trovare delle soluzioni efficaci mettendo in pratica le mie capacità.
