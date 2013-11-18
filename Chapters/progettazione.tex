@@ -20,7 +20,7 @@ Il risultato ottenuto è che ogni applicazione che si intende sviluppare con tal
 \caption{Architettura generale Sencha Touch 2}
 \label{fig:architettura Sencha}
 \end{figure}
-Il diagramma in figura \ref{fig:architettura Sencha} rappresenta l'architettura generale che ogni applicazione deve avere, ciò è riflesso anche nella struttura di cartelle e nei nomi dei file; essa si basa sul pattern architetturale \ac{MVC} il quale è composto da 4 package che svolgono funzioni diverse:
+Il diagramma in figura \ref{fig:architettura Sencha} rappresenta l'architettura generale che ogni applicazione deve avere, ciò è riflesso anche nella struttura di cartelle e nei nomi dei file; essa si basa sul pattern architetturale \ac{MVC} composto da \emph{model}, \emph{view} e \emph{controller} al quale i progettisti \emph{Sencha} hanno apportato alcune modifiche: è stato aggiunto un componente chiamato \emph{store} che si occupa di separare il prototipo dei dati dai metodi di accesso agli stessi; tale pattern è quindi composto da 4 package che svolgono funzioni diverse:
 \begin{description}
 \item[model:] rappresenta il modello dei dati su cui si basa l'applicazione; ogni oggetto \emph{model} viene gestito da uno \emph{store} che si occupa di leggere e scrivere i dati mediante un \emph{proxy};
 \item[store:] rappresenta una collezione di istanze di modelli e viene utilizzato per gestire caricamento, modifica e salvataggio dei dati dell'applicazione tramite un \emph{proxy};
