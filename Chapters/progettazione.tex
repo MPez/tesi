@@ -22,10 +22,10 @@ Il risultato ottenuto è che ogni applicazione che si intende sviluppare con tal
 \end{figure}
 Il diagramma in figura \ref{fig:architettura Sencha} rappresenta l'architettura generale che ogni applicazione deve avere, ciò è riflesso anche nella struttura di cartelle e nei nomi dei file; essa si basa sul pattern architetturale \ac{MVC} composto da \emph{model}, \emph{view} e \emph{controller} al quale i progettisti \emph{Sencha} hanno apportato alcune modifiche: è stato aggiunto un componente chiamato \emph{store} che si occupa di separare il prototipo dei dati dai metodi di accesso agli stessi; tale pattern è quindi composto da 4 package che svolgono funzioni diverse:
 \begin{description}
-\item[model:] rappresenta il modello dei dati su cui si basa l'applicazione; ogni oggetto \emph{model} viene gestito da uno \emph{store} che si occupa di leggere e scrivere i dati mediante un \emph{proxy};
-\item[store:] rappresenta una collezione di istanze di modelli e viene utilizzato per gestire caricamento, modifica e salvataggio dei dati dell'applicazione tramite un \emph{proxy};
-\item[view:] rappresenta tutti gli oggetti che servono a visualizzare le informazioni all'utente e si riflette dunque sull'interfaccia grafica;
-\item[controller:] rappresenta il gestore della logica dell'applicazione; esegue il collegamento tra l'azione che l'utente desidera svolgere e i dati effettivi sul quale l'azione deve essere eseguita.
+\item[Model:] rappresenta il modello dei dati su cui si basa l'applicazione; ogni oggetto \emph{model} viene gestito da uno \emph{store} che si occupa di leggere e scrivere i dati mediante un \emph{proxy};
+\item[Store:] rappresenta una collezione di istanze di modelli e viene utilizzato per gestire caricamento, modifica e salvataggio dei dati dell'applicazione tramite un \emph{proxy};
+\item[View:] rappresenta tutti gli oggetti che servono a visualizzare le informazioni all'utente e si riflette dunque sull'interfaccia grafica;
+\item[Controller:] rappresenta il gestore della logica dell'applicazione; esegue il collegamento tra l'azione che l'utente desidera svolgere e i dati effettivi sul quale l'azione deve essere eseguita.
 \end{description}
 
 \section{MyNotes}

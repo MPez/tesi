@@ -42,7 +42,16 @@ La situazione in proposito è migliorata notevolmente con la distribuzione della
 
 Un altro aspetto importante da considerare è l'utilizzo di \emph{Sencha Architect} per la realizzazione di una \ac{GUI}: si è rivelato essere uno strumento essenziale per disegnare velocemente ed efficacemente interfacce complesse, fornendo un aiuto indispensabile allo sviluppatore meno esperto.
 
-Nel complesso l'azienda è rimasta soddisfatta del lavoro svolto, sia per i prototipi realizzati sia per la realizzazione della documentazione completa del codice sorgente di \emph{MyNotes} e di \emph{SensorDevice} ma anche del pacchetto \emph{SyncEngine} dando uniformità e continuità ai due progetti di stage che li hanno prodotti.
+Nel complesso l'azienda è rimasta soddisfatta del lavoro svolto, sia per la realizzazione dei prototipi \emph{MyNotes} e \emph{SensorDevice}, sia per la produzione della documentazione completa del codice sorgente delle due applicazioni, realizzata mediante \emph{JSDuck} \cite{sencha:jsduck}.
+
+Inoltre è stata prodotta la documentazione del componente \emph{SyncEngine}, integrando quanto svolto dallo stagista che lo ha sviluppato, in modo da fornire all'azienda un formato unico e uniforme per la consultazione del materiale prodotto, visibile in figura \ref{fig:documentazione syncengine}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{gfx/screenshot/doc_syncEngine}
+\caption{Screenshot documentazione \emph{SyncEngine}}
+\label{fig:documentazione syncengine}
+\end{figure}
 
 \section{Criticità riscontrate}
 L'analisi dei requisiti e la progettazione delle applicazioni non hanno generato problemi rilevanti, sia per la natura esplorativa dello stage sia per il supporto ricevuto dal tutor aziendale.
@@ -52,7 +61,8 @@ Le difficoltà maggiori si sono avute nella corretta interpretazione della docum
 Anche la consultazione del forum ufficiale spesso è risultata vana in quanto, davanti alla richieste d'aiuto, gli sviluppatori e i progettisti \emph{Sencha} non sempre riescono a dare soluzioni efficaci, lasciando in sospeso le conversazioni o dando risposte molto vaghe e poco utili nella pratica.
 
 Un'ulteriore problema si è avuto con l'integrazione dei due framework: le guide trovate in Internet sono state utili per capire il singolo funzionamento dei framework ma, facendo riferimento a vecchie versioni degli stessi e risultando in alcuni casi anche in contrasto tra loro, sono state poco utili per la soluzione al problema: sono serviti diversi tentativi per comprendere la corretta tecnica.
-Solamente l'arrivo di \emph{Sencha Touch 2.3} ha risolto parzialmente il problema creando degli \emph{adapter} verso le \ac{API} di \emph{Apache Cordova}, anche se alcuni di questi, come \emph{Device Capture} e \emph{Device File} presentano dei bug che al tempo dello stage non sono stati risolti da \emph{Sencha}.
+
+L'arrivo di \emph{Sencha Touch 2.3} ha risolto parzialmente il problema creando degli \emph{adapter} verso le \ac{API} di \emph{Apache Cordova}; tali \emph{adapter} riflettono le funzionalità descritte in tabella \ref{tab:funzionalità sensordevice}. Purtroppo alcuni di questi, come \emph{Capture} e \emph{File}, presentavano, al tempo dello stage, dei bug che non hanno permesso di testare positivamente le relative caratteristiche.
 
 \section{Conoscenze acquisite}
 L'attività di stage mi ha dato la possibilità di vivere una realtà lavorativa in un'azienda solida, seguito da personale qualificato, facendomi mettere in pratica, anche se solo per un breve periodo, le conoscenze che ho acquisito attraverso gli studi universitari e dandomi la possibilità di approcciare la programmazione per sistemi mobili cogliendone alcuni pregi e difetti.
